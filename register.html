@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign Up - Archive of Our Own</title>
+  
+  <!-- CSS Modules -->
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/header.css" />
+  <link rel="stylesheet" href="css/auth.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body data-page="auth-register">
+  <header class="site-header">
+    <div class="header-top container">
+      <a class="logo-wrap" href="index.html">
+        <div class="logo-mark">AO</div>
+        <div class="logo-copy">
+          <h1>Archive of Our Own</h1>
+          <p>for users, by users</p>
+        </div>
+      </a>
+
+      <div class="auth-links">
+        <a href="login.html">Log In</a>
+        <span>|</span>
+        <a class="active" href="register.html">Sign Up</a>
+      </div>
+    </div>
+
+    <div class="nav-bar">
+      <div class="container nav-inner">
+        <nav class="main-nav">
+          <a href="index.html">Home</a>
+          <a href="browse-fandom.html">Fandoms</a>
+          <a href="browse-works.html">Browse</a>
+          <a href="about.html">About</a>
+        </nav>
+
+        <form class="search-form">
+          <input type="text" placeholder="Search works..." />
+          <button type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </header>
+
+  <main class="auth-page-main">
+    <section class="auth-shell">
+      <article class="auth-info-panel">
+        <p class="auth-kicker">New Account</p>
+        <h2>Create Your Account</h2>
+        <p>Register once and your profile state is saved locally so you can return to the same reading setup later.</p>
+        <div class="auth-info-list">
+          <div class="auth-info-item">Create your reader identity</div>
+          <div class="auth-info-item">Store your preferences in one place</div>
+          <div class="auth-info-item">Jump back into stories instantly</div>
+        </div>
+      </article>
+
+      <article class="auth-card">
+        <h3>Sign Up</h3>
+        <form id="registerForm" class="auth-form">
+          <label for="registerUsername">Username</label>
+          <input id="registerUsername" name="username" type="text" required autocomplete="username" />
+
+          <label for="registerPassword">Password</label>
+          <input id="registerPassword" name="password" type="password" required autocomplete="new-password" />
+
+          <label for="registerConfirmPassword">Confirm Password</label>
+          <input id="registerConfirmPassword" name="confirmPassword" type="password" required autocomplete="new-password" />
+
+          <button class="auth-submit-btn" type="submit">Create Account</button>
+          <p id="authMessage" class="auth-message"></p>
+        </form>
+
+        <p class="auth-switch">Already have an account? <a href="login.html">Log in here</a>.</p>
+      </article>
+    </section>
+  </main>
+
+  <!-- JavaScript Modules -->
+  <script src="js/auth.js"></script>
+</body>
+</html>

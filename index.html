@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Archive of Our Own - Recent Works</title>
+  
+  <!-- CSS Modules -->
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/header.css" />
+  <link rel="stylesheet" href="css/panels.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body data-page="home">
+  <header class="site-header">
+    <div class="header-top container">
+      <a class="logo-wrap" href="index.html">
+        <div class="logo-mark">AO</div>
+        <div class="logo-copy">
+          <h1>Archive of Our Own</h1>
+          <p>for users, by users</p>
+        </div>
+      </a>
+
+      <div class="auth-links">
+        <a href="login.html">Log In</a>
+        <span>|</span>
+        <a href="register.html">Sign Up</a>
+      </div>
+    </div>
+
+    <div class="nav-bar">
+      <div class="container nav-inner">
+        <nav class="main-nav">
+          <a class="active" href="index.html">Home</a>
+          <a href="browse-fandom.html">Fandoms</a>
+          <a href="browse-works.html">Browse</a>
+          <a href="about.html">About</a>
+        </nav>
+
+        <form class="search-form">
+          <input type="text" placeholder="Search works..." />
+          <button type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </header>
+
+  <main class="home-frame">
+    <div class="content-topbar">
+      <button id="sidebarToggle" class="sidebar-toggle" type="button" aria-label="Toggle sidebar">☰</button>
+    </div>
+
+    <div class="page-layout" id="pageLayout">
+      <aside class="sidebar" id="sidebar">
+        <section class="panel sidebar-panel search-panel">
+          <h3>Search Within Results</h3>
+          <input class="sidebar-input" type="text" placeholder="Search within results" />
+        </section>
+
+    <section class="panel sidebar-panel filter-panel">
+      <h3>Filter Works</h3>
+
+      <div class="filter-block collapsible open">
+        <button class="filter-toggle" type="button">
+          <span>Rating</span>
+          <span class="filter-arrow">⌃</span>
+        </button>
+        <div class="filter-content">
+          <div class="filter-options">
+            <label class="filter-option">
+              <input type="checkbox" data-filter-group="rating" value="General Audiences" />
+              General Audiences
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" data-filter-group="rating" value="Teen And Up Audiences" />
+              Teen And Up Audiences
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" data-filter-group="rating" value="Mature" />
+              Mature
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" data-filter-group="rating" value="Explicit" />
+              Explicit
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" data-filter-group="rating" value="Not Rated" />
+              Not Rated
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="filter-block collapsible open">
+        <button class="filter-toggle" type="button">
+          <span>Warnings</span>
+          <span class="filter-arrow">⌃</span>
+        </button>
+        <div class="filter-content">
+          <div class="filter-options">
+            <label class="filter-option">
+              <input type="checkbox" data-filter-group="warnings" value="No Archive Warnings Apply" />
+              No Archive Warnings Apply
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" data-filter-group="warnings" value="Graphic Violence" />
+              Graphic Violence
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" data-filter-group="warnings" value="Major Character Death" />
+              Major Character Death
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" data-filter-group="warnings" value="Underage" />
+              Underage
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="filter-block collapsible open">
+        <button class="filter-toggle" type="button">
+          <span>Categories</span>
+          <span class="filter-arrow">⌃</span>
+        </button>
+        <div class="filter-content">
+          <div class="filter-options">
+            <label class="filter-option">
+              <input type="checkbox" data-filter-group="categories" value="F/F" />
+              F/F
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" data-filter-group="categories" value="F/M" />
+              F/M
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" data-filter-group="categories" value="Gen" />
+              Gen
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" data-filter-group="categories" value="M/M" />
+              M/M
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" data-filter-group="categories" value="Multi" />
+              Multi
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" data-filter-group="categories" value="Other" />
+              Other
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="filter-block collapsible open">
+        <button class="filter-toggle" type="button">
+          <span>Completion Status</span>
+          <span class="filter-arrow">⌃</span>
+        </button>
+        <div class="filter-content">
+          <div class="filter-options">
+            <label class="filter-option">
+              <input type="checkbox" data-filter-group="status" value="Complete Works Only" />
+              Complete Works Only
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" data-filter-group="status" value="Works in Progress" />
+              Works in Progress
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="filter-block collapsible open">
+        <button class="filter-toggle" type="button">
+          <span>Word Count</span>
+          <span class="filter-arrow">⌃</span>
+        </button>
+        <div class="filter-content">
+          <div class="filter-options">
+            <label class="filter-option">
+              <input type="checkbox" data-filter-group="words" value="under-5000" />
+              Under 5,000
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" data-filter-group="words" value="5000-20000" />
+              5,000 - 20,000
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" data-filter-group="words" value="20000-50000" />
+              20,000 - 50,000
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" data-filter-group="words" value="50000-plus" />
+              50,000+
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="filter-block">
+        <h4>Include Tags</h4>
+        <input class="sidebar-input" type="text" placeholder="Comma separated" />
+      </div>
+
+      <div class="filter-block">
+        <h4>Exclude Tags</h4>
+        <input class="sidebar-input" type="text" placeholder="Comma separated" />
+      </div>
+    </section>
+      </aside>
+
+      <section class="main-column">
+        <section class="panel home-main-panel">
+          <h2 class="page-title">Recent Works</h2>
+          <p class="page-subtitle">
+            These are some of the latest works posted to the Archive. To find more works,
+            choose a fandom or try our advanced search.
+          </p>
+
+          <div class="work-list">
+            <article
+              class="work-card"
+              data-rating="Teen And Up Audiences"
+              data-warnings="No Archive Warnings Apply"
+              data-categories="F/M"
+              data-status="Complete Works Only"
+              data-words="45230"
+            >
+              <div class="work-icons grid-icons">
+                <span class="rating-badge badge-yellow">T</span>
+                <span class="rating-badge badge-purple">!</span>
+                <span class="rating-badge badge-green">✓</span>
+              </div>
+
+              <div class="work-content">
+                <div class="work-heading">
+                  <div>
+                    <h3><a href="work.html">The Stars Between Us</a> <span class="author-inline">by CosmicDreamer</span></h3>
+                    <p class="work-fandom">Original Work</p>
+                  </div>
+                  <div class="updated-meta">
+                    <span>Updated</span>
+                    <strong>15 Feb 2026</strong>
+                  </div>
+                </div>
+
+                
+                <p class="work-summary">
+                  When an astronaut and a ground control operator fall in love across the void of space, they must
+                  find a way to bridge the impossible distance between them.
+                </p>
+
+                <div class="tag-row">
+                  <span class="label">Tags:</span>
+                  <span class="tag">Romance</span>
+                  <span class="tag">Science Fiction</span>
+                  <span class="tag">Slow Burn</span>
+                  <span class="tag">+2 more</span>
+                </div>
+
+                <div class="stats-row">
+                  <span>Language: English</span>
+                  <span>Words: 45,230</span>
+                  <span>Chapters: 2/2</span>
+                  <span>Hits: 84,920</span>
+                  <span>Kudos: 8492</span>
+                </div>
+              </div>
+            </article>
+
+            <article
+              class="work-card"
+              data-rating="Mature"
+              data-warnings="Graphic Violence,Major Character Death"
+              data-categories="Gen"
+              data-status="Works in Progress"
+              data-words="72150"
+            >
+              <div class="work-icons grid-icons">
+                <span class="rating-badge badge-orange">M</span>
+                <span class="rating-badge badge-orange">!</span>
+                <span class="rating-badge badge-purple">✓</span>
+                <span class="rating-badge badge-red">✕</span>
+              </div>
+
+              <div class="work-content">
+                <div class="work-heading">
+                  <div>
+                    <h3><a href="work-book2.html">Shadows of the Forgotten City</a> <span class="author-inline">by MidnightScribe</span></h3>
+                    <p class="work-fandom">Original Work</p>
+                  </div>
+                  <div class="updated-meta">
+                    <span>Updated</span>
+                    <strong>18 Feb 2026</strong>
+                  </div>
+                </div>
+
+                <p class="work-summary">
+                  An archaeological team discovers an ancient city buried beneath the Amazon rainforest.
+                </p>
+
+                <div class="tag-row">
+                  <span class="label">Tags:</span>
+                  <span class="tag">Horror</span>
+                  <span class="tag">Mystery</span>
+                  <span class="tag">Adventure</span>
+                  <span class="tag">+2 more</span>
+                </div>
+
+                <div class="stats-row">
+                  <span>Language: English</span>
+                  <span>Words: 72,150</span>
+                  <span>Chapters: 18/?</span>
+                  <span>Hits: 124,830</span>
+                  <span>Kudos: 12483</span>
+                </div>
+              </div>
+            </article>
+
+            <article
+              class="work-card"
+              data-rating="General Audiences"
+              data-warnings="No Archive Warnings Apply"
+              data-categories="F/M"
+              data-status="Complete Works Only"
+              data-words="23840"
+            >
+              <div class="work-icons grid-icons">
+                <span class="rating-badge badge-green">G</span>
+                <span class="rating-badge badge-green">✓</span>
+                <span class="rating-badge badge-green">✓</span>
+              </div>
+
+              <div class="work-content">
+                <div class="work-heading">
+                  <div>
+                    <h3><a href="work-book3.html">Coffee Shop Confessions</a> <span class="author-inline">by LatteArtLover</span></h3>
+                    <p class="work-fandom">Original Work</p>
+                  </div>
+                  <div class="updated-meta">
+                    <span>Updated</span>
+                    <strong>17 Feb 2026</strong>
+                  </div>
+                </div>
+
+                <p class="work-summary">
+                  Jamie has been going to the same coffee shop every morning for two years, harboring a crush.
+                </p>
+
+                <div class="tag-row">
+                  <span class="label">Tags:</span>
+                  <span class="tag">Fluff</span>
+                  <span class="tag">Romance</span>
+                  <span class="tag">Coffee Shop AU</span>
+                  <span class="tag">+3 more</span>
+                </div>
+
+                <div class="stats-row">
+                  <span>Language: English</span>
+                  <span>Words: 23,840</span>
+                  <span>Chapters: 8/8</span>
+                  <span>Hits: 156,320</span>
+                  <span>Kudos: 15632</span>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <p id="noResultsMessage" style="display: none; margin-top: 16px; color: #7a4b45;">
+            No works match the selected filters.
+          </p>
+        </section>
+      </section>
+    </div>
+  </main>
+
+  <!-- JavaScript Modules -->
+  <script src="js/auth.js"></script>
+  <script src="js/ui.js"></script>
+</body>
+</html>

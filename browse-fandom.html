@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Browse Fandoms</title>
+  
+  <!-- CSS Modules -->
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/header.css" />
+  <link rel="stylesheet" href="css/panels.css" />
+  <link rel="stylesheet" href="css/fandom.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body data-page="fandoms">
+  <header class="site-header">
+    <div class="header-top container">
+      <a class="logo-wrap" href="index.html">
+        <div class="logo-mark">AO</div>
+        <div class="logo-copy">
+          <h1>Archive of Our Own</h1>
+          <p>for users, by users</p>
+        </div>
+      </a>
+      <div class="auth-links">
+        <a href="login.html">Log In</a>
+        <span>|</span>
+        <a href="register.html">Sign Up</a>
+      </div>
+    </div>
+
+    <div class="nav-bar">
+      <div class="container nav-inner">
+        <nav class="main-nav">
+          <a href="index.html">Home</a>
+          <a class="active" href="browse-fandom.html">Fandoms</a>
+          <a href="browse-works.html">Browse</a>
+          <a href="about.html">About</a>
+        </nav>
+        <form class="search-form">
+          <input type="text" placeholder="Search fandoms..." />
+          <button type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </header>
+
+  <main class="container page-main single-column">
+    <section class="panel fandom-panel">
+      <h2 class="page-title">Browse Fandoms</h2>
+      <p class="page-subtitle">Explore fanfiction across different fandoms. Select a fandom to see all available works.</p>
+
+      <!-- Search Section -->
+      <div class="fandom-search-section">
+        <h3 class="search-section-title">Search for a Fandom</h3>
+        <div class="search-input-wrapper">
+          <input type="text" id="fandomSearchInput" class="fandom-search-input" placeholder="Type a fandom name..." />
+          <button type="button" class="fandom-search-btn">Search</button>
+        </div>
+      </div>
+
+      <!-- Category Buttons -->
+      <div class="category-buttons">
+        <button class="category-btn active" data-category="all">All Categories</button>
+        <button class="category-btn" data-category="Books & Literature">Books & Literature</button>
+        <button class="category-btn" data-category="Movies">Movies</button>
+        <button class="category-btn" data-category="TV Shows">TV Shows</button>
+        <button class="category-btn" data-category="Video Games">Video Games</button>
+        <button class="category-btn" data-category="Anime & Manga">Anime & Manga</button>
+        <button class="category-btn" data-category="Music & Bands">Music & Bands</button>
+        <button class="category-btn" data-category="Theater">Theater</button>
+        <button class="category-btn" data-category="Other Media">Other Media</button>
+      </div>
+
+      <!-- Most Popular Fandoms -->
+      <div class="popular-fandoms-section">
+        <h3 class="popular-fandoms-title">Most Popular Fandoms</h3>
+        <div class="popular-fandoms-list">
+          <a href="browse-works.html" class="fandom-item" data-category="Books & Literature">
+            <div class="fandom-info">
+              <h4 class="fandom-name">Harry Potter</h4>
+              <span class="fandom-category">Books & Literature</span>
+            </div>
+            <div class="fandom-stats">
+              <span class="work-count">345,676</span>
+              <span class="work-label">works</span>
+            </div>
+          </a>
+          <a href="browse-works.html" class="fandom-item" data-category="Movies">
+            <div class="fandom-info">
+              <h4 class="fandom-name">Marvel Cinematic Universe</h4>
+              <span class="fandom-category">Movies</span>
+            </div>
+            <div class="fandom-stats">
+              <span class="work-count">289,432</span>
+              <span class="work-label">works</span>
+            </div>
+          </a>
+          <a href="browse-works.html" class="fandom-item" data-category="TV Shows">
+            <div class="fandom-info">
+              <h4 class="fandom-name">Supernatural</h4>
+              <span class="fandom-category">TV Shows</span>
+            </div>
+            <div class="fandom-stats">
+              <span class="work-count">256,789</span>
+              <span class="work-label">works</span>
+            </div>
+          </a>
+          <a href="browse-works.html" class="fandom-item" data-category="Movies">
+            <div class="fandom-info">
+              <h4 class="fandom-name">Star Wars</h4>
+              <span class="fandom-category">Movies</span>
+            </div>
+            <div class="fandom-stats">
+              <span class="work-count">198,234</span>
+              <span class="work-label">works</span>
+            </div>
+          </a>
+          <a href="browse-works.html" class="fandom-item" data-category="TV Shows">
+            <div class="fandom-info">
+              <h4 class="fandom-name">Sherlock</h4>
+              <span class="fandom-category">TV Shows</span>
+            </div>
+            <div class="fandom-stats">
+              <span class="work-count">167,543</span>
+              <span class="work-label">works</span>
+            </div>
+          </a>
+          <a href="browse-works.html" class="fandom-item" data-category="TV Shows">
+            <div class="fandom-info">
+              <h4 class="fandom-name">Doctor Who</h4>
+              <span class="fandom-category">TV Shows</span>
+            </div>
+            <div class="fandom-stats">
+              <span class="work-count">145,678</span>
+              <span class="work-label">works</span>
+            </div>
+          </a>
+          <a href="browse-works.html" class="fandom-item" data-category="Video Games">
+            <div class="fandom-info">
+              <h4 class="fandom-name">The Witcher</h4>
+              <span class="fandom-category">Video Games</span>
+            </div>
+            <div class="fandom-stats">
+              <span class="work-count">98,765</span>
+              <span class="work-label">works</span>
+            </div>
+          </a>
+          <a href="browse-works.html" class="fandom-item" data-category="Anime & Manga">
+            <div class="fandom-info">
+              <h4 class="fandom-name">Attack on Titan</h4>
+              <span class="fandom-category">Anime & Manga</span>
+            </div>
+            <div class="fandom-stats">
+              <span class="work-count">87,654</span>
+              <span class="work-label">works</span>
+            </div>
+          </a>
+          <a href="browse-works.html" class="fandom-item" data-category="Anime & Manga">
+            <div class="fandom-info">
+              <h4 class="fandom-name">My Hero Academia</h4>
+              <span class="fandom-category">Anime & Manga</span>
+            </div>
+            <div class="fandom-stats">
+              <span class="work-count">76,543</span>
+              <span class="work-label">works</span>
+            </div>
+          </a>
+          <a href="browse-works.html" class="fandom-item" data-category="TV Shows">
+            <div class="fandom-info">
+              <h4 class="fandom-name">Good Omens</h4>
+              <span class="fandom-category">TV Shows</span>
+            </div>
+            <div class="fandom-stats">
+              <span class="work-count">65,432</span>
+              <span class="work-label">works</span>
+            </div>
+          </a>
+          <a href="browse-works.html" class="fandom-item" data-category="Books & Literature">
+            <div class="fandom-info">
+              <h4 class="fandom-name">Game of Thrones</h4>
+              <span class="fandom-category">Books & Literature</span>
+            </div>
+            <div class="fandom-stats">
+              <span class="work-count">54,321</span>
+              <span class="work-label">works</span>
+            </div>
+          </a>
+          <a href="browse-works.html" class="fandom-item" data-category="Movies">
+            <div class="fandom-info">
+              <h4 class="fandom-name">The Lord of the Rings</h4>
+              <span class="fandom-category">Movies</span>
+            </div>
+            <div class="fandom-stats">
+              <span class="work-count">52,109</span>
+              <span class="work-label">works</span>
+            </div>
+          </a>
+          <a href="browse-works.html" class="fandom-item" data-category="Video Games">
+            <div class="fandom-info">
+              <h4 class="fandom-name">Minecraft</h4>
+              <span class="fandom-category">Video Games</span>
+            </div>
+            <div class="fandom-stats">
+              <span class="work-count">48,234</span>
+              <span class="work-label">works</span>
+            </div>
+          </a>
+          <a href="browse-works.html" class="fandom-item" data-category="Anime & Manga">
+            <div class="fandom-info">
+              <h4 class="fandom-name">Naruto</h4>
+              <span class="fandom-category">Anime & Manga</span>
+            </div>
+            <div class="fandom-stats">
+              <span class="work-count">46,789</span>
+              <span class="work-label">works</span>
+            </div>
+          </a>
+          <a href="browse-works.html" class="fandom-item" data-category="Music & Bands">
+            <div class="fandom-info">
+              <h4 class="fandom-name">BTS</h4>
+              <span class="fandom-category">Music & Bands</span>
+            </div>
+            <div class="fandom-stats">
+              <span class="work-count">43,210</span>
+              <span class="work-label">works</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- JavaScript Modules -->
+  <script src="js/auth.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/fandom.js"></script>
+</body>
+</html>

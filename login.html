@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Log In - Archive of Our Own</title>
+  
+  <!-- CSS Modules -->
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/header.css" />
+  <link rel="stylesheet" href="css/auth.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body data-page="auth-login">
+  <header class="site-header">
+    <div class="header-top container">
+      <a class="logo-wrap" href="index.html">
+        <div class="logo-mark">AO</div>
+        <div class="logo-copy">
+          <h1>Archive of Our Own</h1>
+          <p>for users, by users</p>
+        </div>
+      </a>
+
+      <div class="auth-links">
+        <a class="active" href="login.html">Log In</a>
+        <span>|</span>
+        <a href="register.html">Sign Up</a>
+      </div>
+    </div>
+
+    <div class="nav-bar">
+      <div class="container nav-inner">
+        <nav class="main-nav">
+          <a href="index.html">Home</a>
+          <a href="browse-fandom.html">Fandoms</a>
+          <a href="browse-works.html">Browse</a>
+          <a href="about.html">About</a>
+        </nav>
+
+        <form class="search-form">
+          <input type="text" placeholder="Search works..." />
+          <button type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </header>
+
+  <main class="auth-page-main">
+    <section class="auth-shell">
+      <article class="auth-info-panel">
+        <p class="auth-kicker">Reader Access</p>
+        <h2>Welcome Back</h2>
+        <p>Log in to save your bookmarks, keep track of chapter progress, and personalize your reading experience.</p>
+        <div class="auth-info-list">
+          <div class="auth-info-item">Save chapter progress automatically</div>
+          <div class="auth-info-item">Keep bookmark and kudos state</div>
+          <div class="auth-info-item">Switch devices with the same profile name</div>
+        </div>
+      </article>
+
+      <article class="auth-card">
+        <h3>Log In</h3>
+        <form id="loginForm" class="auth-form">
+          <label for="loginUsername">Username</label>
+          <input id="loginUsername" name="username" type="text" required autocomplete="username" />
+
+          <label for="loginPassword">Password</label>
+          <input id="loginPassword" name="password" type="password" required autocomplete="current-password" />
+
+          <button class="auth-submit-btn" type="submit">Log In</button>
+          <p id="authMessage" class="auth-message"></p>
+        </form>
+
+        <p class="auth-switch">Need an account? <a href="register.html">Sign up here</a>.</p>
+      </article>
+    </section>
+  </main>
+
+  <!-- JavaScript Modules -->
+  <script src="js/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shadows of the Forgotten City</title>
+  
+  <!-- CSS Modules -->
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/header.css" />
+  <link rel="stylesheet" href="css/panels.css" />
+  <link rel="stylesheet" href="css/reader.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body data-page="reader">
+  <header class="site-header">
+    <div class="header-top container">
+      <a class="logo-wrap" href="index.html">
+        <div class="logo-mark">AO</div>
+        <div class="logo-copy">
+          <h1>Archive of Our Own</h1>
+          <p>for users, by users</p>
+        </div>
+      </a>
+
+      <div class="auth-links">
+        <a href="login.html">Log In</a>
+        <span>|</span>
+        <a href="register.html">Sign Up</a>
+      </div>
+    </div>
+
+    <div class="nav-bar">
+      <div class="container nav-inner">
+        <nav class="main-nav">
+          <a href="index.html">Home</a>
+          <a href="browse-fandom.html">Fandoms</a>
+          <a href="browse-works.html">Browse</a>
+          <a href="about.html">About</a>
+        </nav>
+
+        <form class="search-form">
+          <input type="text" placeholder="Search works..." />
+          <button type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </header>
+
+  <main class="container page-main single-column reader-page">
+    <article class="panel story-panel">
+      <div class="story-top-nav compact-top-nav">
+        <a href="index.html">← Back to Search</a>
+      </div>
+
+      <header class="story-header story-header-centered">
+        <h2>Shadows of the Forgotten City</h2>
+        <p class="story-author centered-author">by <span>ArchaeologyDreams</span></p>
+
+        <div class="story-meta-row">
+          <div class="story-rating-icons">
+            <span class="rating-badge badge-orange">M</span>
+            <span class="rating-badge badge-orange">!</span>
+            <span class="rating-badge badge-purple">✓</span>
+            <span class="rating-badge badge-red">✕</span>
+          </div>
+
+          <div class="story-meta-inline">
+            <span><strong>Rating:</strong> Mature</span>
+            <span>•</span>
+            <span><strong>Words:</strong> 72,150</span>
+            <span>•</span>
+            <span><strong>Chapters:</strong> 5/5</span>
+            <span>•</span>
+            <span><strong>Kudos:</strong> <span id="kudosCount">5,234</span></span>
+            <span>•</span>
+            <span><strong>Hits:</strong> 42,156</span>
+          </div>
+        </div>
+      </header>
+
+      <section class="story-details-box">
+        <button id="toggleDetailsBtn" class="details-toggle-btn" type="button">
+          ▲ Hide Full Details
+        </button>
+
+        <div id="storyDetailsContent" class="story-details-content">
+          <p><strong>Fandom:</strong> <span>Original Work</span></p>
+          <p><strong>Warnings:</strong> <span>Violence, Horror</span></p>
+          <p><strong>Relationships:</strong> <span>Mystery, Thriller, Survival</span></p>
+          <p><strong>Additional Tags:</strong> <span>Archaeological Discovery, Ancient Curse, Supernatural</span></p>
+          <p><strong>Published:</strong> <span>2026-01-20</span></p>
+          <p><strong>Status:</strong> <span>Completed</span></p>
+          <p>
+            <strong>Comments:</strong> <span>287</span>
+            <strong>• Bookmarks:</strong> <span id="bookmarkCount">856</span>
+          </p>
+        </div>
+
+        <div class="story-action-row">
+          <button type="button" class="story-action-btn" id="kudosBtn" aria-pressed="false">♡ Leave Kudos</button>
+          <button type="button" class="story-action-btn" id="bookmarkBtn" aria-pressed="false">🔖 Bookmark</button>
+          <button type="button" class="story-action-btn" id="subscribeBtn" aria-pressed="false">🔔 Subscribe</button>
+        </div>
+      </section>
+
+      <section class="story-text">
+        <div id="chapter1" class="chapter-panel active-chapter" data-title="Chapter 1: Discovery">
+          <div id="storyText">
+            <h3>Chapter 1: Discovery</h3>
+
+            <p>
+              The excavation pit dropped forty feet below street level, a perfectly rectangular wound in the earth that revealed layers of civilization like the rings of an ancient tree. Sarah pressed her gloved hand against the stone wall, tracing the geometric patterns that her team had uncovered that morning.
+            </p>
+
+            <p>
+              "Carbon dating confirms it," Marcus called from across the site. "Early Mesopotamian. But not any known city in the records."
+            </p>
+
+            <p>
+              Sarah's pulse quickened. For fifteen years, she'd chased rumors and half-forgotten myths. This dig in the mountains near what was once Uruk had seemed like a long shot. Now, staring at walls that shouldn't exist, at inscriptions in a dialect she recognized but couldn't quite place, she wondered if the long shot had somehow hit the mark.
+            </p>
+
+            <p>
+              "We need to document everything," she said, already pulling out her equipment. "And someone get the full team. I want every camera, every sensor running."
+            </p>
+
+            <p>
+              As the afternoon sun cast long shadows across the stone, Sarah began to photograph the symbols. Each one seemed to watch her work, seemed to pulse with an intention she couldn't explain. The city wasn't just forgotten, she realized. It had been hidden. Deliberately.
+            </p>
+
+            <p>
+              That night, in her tent, she finally looked up the symbols in her oldest reference texts. What she found made her blood run cold. The city had a name. It had been a place of knowledge, yes, but also of something else. Something the ancient scribes hadn't bothered to name because they'd been too afraid.
+            </p>
+          </div>
+        </div>
+
+        <div id="chapter2" class="chapter-panel" data-title="Chapter 2: Awakening" style="display: none;">
+          <div id="storyTextChapter2">
+            <h3>Chapter 2: Awakening</h3>
+
+            <p>
+              The first incident happened on day three. One of the workers, James, simply stopped working. He stood in the middle of the excavation pit, eyes fixed on a particular section of wall, covered in symbols that seemed to shift when you looked at them peripherally.
+            </p>
+
+            <p>
+              "James, you need to take a break," Sarah said gently, approaching him.
+            </p>
+
+            <p>
+              He turned to her, but his eyes weren't really seeing. "It's singing," he whispered. "Can't you hear it singing?"
+            </p>
+
+            <p>
+              By evening, he was in the hospital. They said heat exhaustion, dehydration. But Sarah knew better. She'd heard him whispering in his sleep, repeating phrases in that ancient dialect. Phrases she'd been reading from the walls.
+            </p>
+
+            <p>
+              That night, she made a decision. The dig would continue, but they'd work in shifts. No one stays in the pit longer than two hours. And no one—no one—touches the walls with bare hands.
+            </p>
+
+            <p>
+              It was too late to matter.
+            </p>
+          </div>
+        </div>
+
+        <div id="chapter3" class="chapter-panel" data-title="Chapter 3: The Invitation" style="display: none;">
+          <div id="storyTextChapter3">
+            <h3>Chapter 3: The Invitation</h3>
+
+            <p>
+              By the second week, two more workers had suffered the same inexplicable illness. The official story was food poisoning. Sarah's team wasn't buying it. They were terrified, and rightfully so.
+            </p>
+
+            <p>
+              Sarah should have abandoned the dig. She should have called the authorities, sealed the site, burned her research. Instead, she found herself descending into the pit each night, long after the others had retreated to camp. The walls seemed to glow in the moonlight, and the symbols seemed to be forming new patterns—a language that was gradually becoming clear.
+            </p>
+
+            <p>
+              It wasn't calling to her. It was inviting her. Asking her to understand. Promising her knowledge that would change everything.
+            </p>
+
+            <p>
+              On the seventh night, she found the chamber. Hidden behind a false wall, exactly where the symbols had guided her. It was small, perfectly preserved, and in its center sat something that shouldn't exist. A device. Intricate, impossible, ancient.
+            </p>
+
+            <p>
+              And it was still running.
+            </p>
+          </div>
+        </div>
+
+        <div id="chapter4" class="chapter-panel" data-title="Chapter 4: The Price" style="display: none;">
+          <div id="storyTextChapter4">
+            <h3>Chapter 4: The Price</h3>
+
+            <p>
+              Sarah's hands trembled as she approached the device. It hummed with a frequency that seemed to resonate in her bones. Every instinct screamed at her to back away, to run, to burn the entire site to ash and salt the earth.
+            </p>
+
+            <p>
+              But her curiosity—her damned, fatal curiosity—drove her forward. She reached out to touch it. The moment her fingers made contact, the chamber exploded into light.
+            </p>
+
+            <p>
+              When she woke, she was back in her tent, and three days had passed. Nobody could remember what had happened. The dig site had been destroyed, collapsed in on itself. The chamber was gone.
+            </p>
+
+            <p>
+              But Sarah could remember. She could remember everything the device had shown her. The knowledge had burned into her mind with perfect, terrible clarity. And now that knowledge wanted out. It wanted to spread, to infect every mind it touched, just as it had infected hers.
+            </p>
+
+            <p>
+              She'd found her forgotten city. And it had found her.
+            </p>
+          </div>
+        </div>
+
+        <div id="chapter5" class="chapter-panel" data-title="Chapter 5: The Forgotten" style="display: none;">
+          <div id="storyTextChapter5">
+            <h3>Chapter 5: The Forgotten</h3>
+
+            <p>
+              Sarah submitted her final report to the university three months later. The excavation had been a washout, she claimed. Geological instability. They were lucky no one had been killed.
+            </p>
+
+            <p>
+              She spent the next year going through the motions of academia—teaching, publishing papers on other sites, building a normal life. But she spent her nights researching something that shouldn't exist, tracking references to the Forgotten City in texts that dated back millennia.
+            </p>
+
+            <p>
+              There were others like her. People who'd found the city, people who'd touched what wasn't meant to be touched. They communicated through coded references, through obscure academic publications. They were searching for something. Or being pulled toward something.
+            </p>
+
+            <p>
+              On the last page of her private journal, Sarah wrote a warning in the ancient dialect: "To those who come after—the city doesn't want to be found. And if it finds you first, god help us all."
+            </p>
+
+            <p>
+              She sealed the journal and buried it deep, where no student would ever stumble across it. But sometimes, late at night, she still heard the singing. Still felt the invitation.
+            </p>
+
+            <p>
+              And sometimes, she wondered if she was strong enough to refuse it much longer.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="chapter-nav-bar bottom">
+        <button id="prevChapterBtnBottom" class="chapter-btn" type="button" disabled>← Previous Chapter</button>
+        <div id="chapterCurrentBottom" class="chapter-current">1 / 5</div>
+        <button id="nextChapterBtnBottom" class="chapter-btn" type="button">Next Chapter →</button>
+      </section>
+    </article>
+  </main>
+
+  <div class="ai-orb-container">
+    <canvas id="aiOrbCanvas" width="130" height="130"></canvas>
+    <div class="ai-orb-label" id="ttsStatus"></div>
+  </div>
+
+  <div class="tts-wrapper" id="ttsWrapper">
+    <button id="toggleTtsDockBtn" class="toggle-tts-tab" type="button">
+      ✦ Hide Audio
+    </button>
+
+    <div class="tts-dock" id="ttsDock">
+      <div class="tts-top-progress">
+        <span id="progressStart">0%</span>
+        <input id="progressBar" type="range" min="0" max="1000" value="0" />
+        <span id="progressEnd">100%</span>
+      </div>
+
+      <div class="tts-progress-hint">
+        Click anywhere on the progress bar to jump to that position
+      </div>
+
+      <div class="tts-main-row">
+        <div class="tts-left-controls">
+          <button id="playBtn" class="tts-main-btn" type="button">▶ Play</button>
+          <button id="pauseBtn" class="tts-main-btn" type="button">❚❚ Pause</button>
+        </div>
+
+        <div class="tts-right-controls">
+          <div class="tts-inline-top">
+            <span class="tts-chapter-label" id="ttsChapterLabel">Chapter 1 of 5</span>
+            <button id="backBtn" class="tts-icon-btn" type="button" aria-label="Back 10 seconds">↺</button>
+            <button id="forwardBtn" class="tts-icon-btn" type="button" aria-label="Forward 10 seconds">↻</button>
+          </div>
+
+          <div class="tts-inline-bottom">
+            <div class="tts-inline-group">
+              <label for="speedRange">Speed:</label>
+              <span id="speedValue">0.9x</span>
+              <input id="speedRange" type="range" min="0.5" max="1.5" step="0.1" value="0.9" />
+            </div>
+
+            <div class="tts-inline-group volume-group">
+              <span>🔊</span>
+              <input id="volumeRange" type="range" min="0" max="1" step="0.1" value="0.8" />
+            </div>
+
+            <select id="voiceMood" class="tts-voice-select">
+              <option value="default">David - Mysterious</option>
+            </select>
+
+            <div class="tts-wave-icon" aria-hidden="true">
+              <span></span><span></span><span></span><span></span><span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript Modules -->
+  <script src="js/auth.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/story.js"></script>
+  <script src="js/tts.js"></script>
+</body>
+</html>

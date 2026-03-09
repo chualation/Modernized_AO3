@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Symbols Guide</title>
+  
+  <!-- CSS Modules -->
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/header.css" />
+  <link rel="stylesheet" href="css/panels.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body data-page="symbols">
+  <header class="site-header">
+    <div class="header-top container">
+      <a class="logo-wrap" href="index.html">
+        <div class="logo-mark">AO</div>
+        <div class="logo-copy">
+          <h1>Archive of Our Own</h1>
+          <p>for users, by users</p>
+        </div>
+      </a>
+      <div class="auth-links">
+        <a href="login.html">Log In</a>
+        <span>|</span>
+        <a href="register.html">Sign Up</a>
+      </div>
+    </div>
+
+    <div class="nav-bar">
+      <div class="container nav-inner">
+        <nav class="main-nav">
+          <a href="index.html">Home</a>
+          <a href="browse-fandom.html">Fandoms</a>
+          <a href="browse-works.html">Browse</a>
+          <a href="about.html">About</a>
+        </nav>
+        <form class="search-form">
+          <input type="text" placeholder="Search symbols..." />
+          <button type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </header>
+
+  <main class="container page-main single-column">
+    <section class="panel">
+      <h2 class="page-title">Archive Symbols</h2>
+      <div class="symbols-grid">
+        <div class="symbol-card">
+          <span class="rating-badge badge-green big-badge">G</span>
+          <h3>General Audiences</h3>
+        </div>
+        <div class="symbol-card">
+          <span class="rating-badge badge-yellow big-badge">T</span>
+          <h3>Teen and Up</h3>
+        </div>
+        <div class="symbol-card">
+          <span class="rating-badge badge-orange big-badge">M</span>
+          <h3>Mature</h3>
+        </div>
+        <div class="symbol-card">
+          <span class="rating-badge badge-red big-badge">E</span>
+          <h3>Explicit</h3>
+        </div>
+        <div class="symbol-card">
+          <span class="rating-badge badge-purple big-badge">!</span>
+          <h3>Warnings</h3>
+        </div>
+        <div class="symbol-card">
+          <span class="rating-badge badge-blue big-badge">✓</span>
+          <h3>Category Indicator</h3>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- JavaScript Modules -->
+  <script src="js/auth.js"></script>
+  <script src="js/ui.js"></script>
+</body>
+</html>

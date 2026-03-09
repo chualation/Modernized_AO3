@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coffee Shop Confessions</title>
+  
+  <!-- CSS Modules -->
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/header.css" />
+  <link rel="stylesheet" href="css/panels.css" />
+  <link rel="stylesheet" href="css/reader.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body data-page="reader">
+  <header class="site-header">
+    <div class="header-top container">
+      <a class="logo-wrap" href="index.html">
+        <div class="logo-mark">AO</div>
+        <div class="logo-copy">
+          <h1>Archive of Our Own</h1>
+          <p>for users, by users</p>
+        </div>
+      </a>
+
+      <div class="auth-links">
+        <a href="login.html">Log In</a>
+        <span>|</span>
+        <a href="register.html">Sign Up</a>
+      </div>
+    </div>
+
+    <div class="nav-bar">
+      <div class="container nav-inner">
+        <nav class="main-nav">
+          <a href="index.html">Home</a>
+          <a href="browse-fandom.html">Fandoms</a>
+          <a href="browse-works.html">Browse</a>
+          <a href="about.html">About</a>
+        </nav>
+
+        <form class="search-form">
+          <input type="text" placeholder="Search works..." />
+          <button type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </header>
+
+  <main class="container page-main single-column reader-page">
+    <article class="panel story-panel">
+      <div class="story-top-nav compact-top-nav">
+        <a href="index.html">← Back to Search</a>
+      </div>
+
+      <header class="story-header story-header-centered">
+        <h2>Coffee Shop Confessions</h2>
+        <p class="story-author centered-author">by <span>WinterRomance</span></p>
+
+        <div class="story-meta-row">
+          <div class="story-rating-icons">
+            <span class="rating-badge badge-green">G</span>
+            <span class="rating-badge badge-green">✓</span>
+            <span class="rating-badge badge-green">✓</span>
+          </div>
+
+          <div class="story-meta-inline">
+            <span><strong>Rating:</strong> Teen</span>
+            <span>•</span>
+            <span><strong>Words:</strong> 23,840</span>
+            <span>•</span>
+            <span><strong>Chapters:</strong> 3/3</span>
+            <span>•</span>
+            <span><strong>Kudos:</strong> <span id="kudosCount">9,876</span></span>
+            <span>•</span>
+            <span><strong>Hits:</strong> 127,432</span>
+          </div>
+        </div>
+      </header>
+
+      <section class="story-details-box">
+        <button id="toggleDetailsBtn" class="details-toggle-btn" type="button">
+          ▲ Hide Full Details
+        </button>
+
+        <div id="storyDetailsContent" class="story-details-content">
+          <p><strong>Fandom:</strong> <span>Original Work</span></p>
+          <p><strong>Warnings:</strong> <span>No Archive Warnings Apply</span></p>
+          <p><strong>Relationships:</strong> <span>Romance, Fluff, Sweet</span></p>
+          <p><strong>Additional Tags:</strong> <span>Winter, Coffee Shop, Confessions, Happy Ending</span></p>
+          <p><strong>Published:</strong> <span>2026-02-28</span></p>
+          <p><strong>Status:</strong> <span>Completed</span></p>
+          <p>
+            <strong>Comments:</strong> <span>456</span>
+            <strong>• Bookmarks:</strong> <span id="bookmarkCount">1,834</span>
+          </p>
+        </div>
+
+        <div class="story-action-row">
+          <button type="button" class="story-action-btn" id="kudosBtn" aria-pressed="false">♡ Leave Kudos</button>
+          <button type="button" class="story-action-btn" id="bookmarkBtn" aria-pressed="false">🔖 Bookmark</button>
+          <button type="button" class="story-action-btn" id="subscribeBtn" aria-pressed="false">🔔 Subscribe</button>
+        </div>
+      </section>
+
+      <section class="story-text">
+        <div id="chapter1" class="chapter-panel active-chapter" data-title="Chapter 1: First Snow">
+          <div id="storyText">
+            <h3>Chapter 1: First Snow</h3>
+
+            <p>
+              The first snow of the season began falling at exactly 3:47 p.m., and Jordan didn't notice until their regular customer—the one with the perpetually tragic expression and the untouched seasonal latte—pointed it out.
+            </p>
+
+            <p>
+              "Look," they said softly, gesturing toward the window. "It's starting."
+            </p>
+
+            <p>
+              Jordan glanced up from the espresso machine, following their gaze. The world outside had transformed in the span of a coffee break. Tiny crystalline flakes were drifting down like whispered secrets, dusting the sidewalk and the bare branches of the tree that grew outside the coffee shop door.
+            </p>
+
+            <p>
+              "Beautiful," Jordan murmured, a little caught off guard by how sad it looked, the way the snow seemed to be falling slowly, inevitably, like all the world's thoughts settling quietly into place.
+            </p>
+
+            <p>
+              "Yeah," their customer said. "Beautiful."
+            </p>
+
+            <p>
+              Later, as Jordan was closing up—sweeping the last of the coffee grounds from beneath the espresso bar—they found a note left under the regular Christmas mug. The handwriting was careful, deliberate: "I come here every day because of you. Just wanted you to know before the snow melted everything away and I lost my courage."
+            </p>
+
+            <p>
+              Jordan's heart did something complicated in their chest. They looked up at the window. The snow was still falling.
+            </p>
+          </div>
+        </div>
+
+        <div id="chapter2" class="chapter-panel" data-title="Chapter 2: Melting" style="display: none;">
+          <div id="storyTextChapter2">
+            <h3>Chapter 2: Melting</h3>
+
+            <p>
+              It took Jordan three days to work up the courage to actually talk to their regular. Three days of rehearsing what to say, of practicing casual nonchalance that they didn't feel, of nearly throwing out the note twice.
+            </p>
+
+            <p>
+              When the regular came in on the fourth day, Jordan was ready.
+            </p>
+
+            <p>
+              "Hi," Jordan said, and their voice came out steadier than expected. "I found your note."
+            </p>
+
+            <p>
+              The regular's face went pale. "Oh god. Oh no. That was supposed to be—I mean, I wasn't—"
+            </p>
+
+            <p>
+              "I'm glad you did," Jordan interrupted, surprising themselves. "I've been wondering if you felt it too. That thing between us. That kept making me stay a little later to serve you, that made me actually care about getting your order right."
+            </p>
+
+            <p>
+              The regular's cheeks flushed a beautiful rosy color. "Really?"
+            </p>
+
+            <p>
+              "Really," Jordan said. "I'm Jordan, by the way. You've been ordering the seasonal latte here every day for six months, and I realized today I never asked your name."
+            </p>
+
+            <p>
+              "It's Casey," they said softly, a smile finally blooming across their face. "And I think I've been in love with you since you remembered I take extra cinnamon on the top."
+            </p>
+
+            <p>
+              Outside, the snow continued to fall. Inside, two people who had been strangers a moment ago suddenly felt like home.
+            </p>
+          </div>
+        </div>
+
+        <div id="chapter3" class="chapter-panel" data-title="Chapter 3: Together" style="display: none;">
+          <div id="storyTextChapter3">
+            <h3>Chapter 3: Together</h3>
+
+            <p>
+              By the time the snow melted, Jordan and Casey had fallen into the kind of easy comfort that feels like it's always existed. They held hands on walks through the park. They made plans for the summer. They talked until the coffee shop closed and spilled onto the snowy sidewalk, neither willing to be the first to leave.
+            </p>
+
+            <p>
+              On the last cold day of winter, when the snow was reduced to dirty slush on the edges of the street but the air still bit at exposed skin, Casey came in during Jordan's closing shift.
+            </p>
+
+            <p>
+              "I have something for you," Casey said, producing a small box from their coat pocket.
+            </p>
+
+            <p>
+              Jordan's heart stopped. "Casey, what—"
+            </p>
+
+            <p>
+              "It's not what you think," Casey laughed, opening the box to reveal a beautiful bookmark, decorated with pressed flowers and a handwritten message: "To mark the spot where we began. Let's write more chapters together?"
+            </p>
+
+            <p>
+              Jordan pulled Casey close, kissing them softly while the world outside continued its slow transformation from winter to spring. "Yes," they whispered. "Every chapter."
+            </p>
+
+            <p>
+              And as the snow finally melted away, two people held onto each other, building something warm in the cold.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="chapter-nav-bar bottom">
+        <button id="prevChapterBtnBottom" class="chapter-btn" type="button" disabled>← Previous Chapter</button>
+        <div id="chapterCurrentBottom" class="chapter-current">1 / 3</div>
+        <button id="nextChapterBtnBottom" class="chapter-btn" type="button">Next Chapter →</button>
+      </section>
+    </article>
+  </main>
+
+  <div class="ai-orb-container">
+    <canvas id="aiOrbCanvas" width="130" height="130"></canvas>
+    <div class="ai-orb-label" id="ttsStatus"></div>
+  </div>
+
+  <div class="tts-wrapper" id="ttsWrapper">
+    <button id="toggleTtsDockBtn" class="toggle-tts-tab" type="button">
+      ✦ Hide Audio
+    </button>
+
+    <div class="tts-dock" id="ttsDock">
+      <div class="tts-top-progress">
+        <span id="progressStart">0%</span>
+        <input id="progressBar" type="range" min="0" max="1000" value="0" />
+        <span id="progressEnd">100%</span>
+      </div>
+
+      <div class="tts-progress-hint">
+        Click anywhere on the progress bar to jump to that position
+      </div>
+
+      <div class="tts-main-row">
+        <div class="tts-left-controls">
+          <button id="playBtn" class="tts-main-btn" type="button">▶ Play</button>
+          <button id="pauseBtn" class="tts-main-btn" type="button">❚❚ Pause</button>
+        </div>
+
+        <div class="tts-right-controls">
+          <div class="tts-inline-top">
+            <span class="tts-chapter-label" id="ttsChapterLabel">Chapter 1 of 3</span>
+            <button id="backBtn" class="tts-icon-btn" type="button" aria-label="Back 10 seconds">↺</button>
+            <button id="forwardBtn" class="tts-icon-btn" type="button" aria-label="Forward 10 seconds">↻</button>
+          </div>
+
+          <div class="tts-inline-bottom">
+            <div class="tts-inline-group">
+              <label for="speedRange">Speed:</label>
+              <span id="speedValue">0.9x</span>
+              <input id="speedRange" type="range" min="0.5" max="1.5" step="0.1" value="0.9" />
+            </div>
+
+            <div class="tts-inline-group volume-group">
+              <span>🔊</span>
+              <input id="volumeRange" type="range" min="0" max="1" step="0.1" value="0.8" />
+            </div>
+
+            <select id="voiceMood" class="tts-voice-select">
+              <option value="default">David - Mysterious</option>
+            </select>
+
+            <div class="tts-wave-icon" aria-hidden="true">
+              <span></span><span></span><span></span><span></span><span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript Modules -->
+  <script src="js/auth.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/story.js"></script>
+  <script src="js/tts.js"></script>
+</body>
+</html>
