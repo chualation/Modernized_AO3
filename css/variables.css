@@ -1,0 +1,19 @@
+/* CSS VARIABLES AND ROOT STYLES */
+:root {
+  --font-sans: "Lora", Georgia, "Times New Roman", serif;
+  --font-serif: "Lexend Deca", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --maroon: #622022;
+  --red: #9a1a1f;
+  --red-dark: #7f1418;
+  --beige: #dbc2a3;
+  --cream: #ece6d5;
+  --panel-bg: #f8f5ed;
+  --panel-bg-soft: #fcfaf6;
+  --panel-border: #d3c3ae;
+  --soft-line: #e5d8c5;
+  --text-main: #493632;
+  --text-soft: #79635b;
+  --white-soft: #fff8ef;
+  --tag-bg: #f2e7d6;
+  --tag-border: #e2d2b7;
+}

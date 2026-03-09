@@ -1,0 +1,259 @@
+/* RESPONSIVE MEDIA QUERIES */
+
+@media (max-width: 1320px) {
+  .home-frame {
+    width: calc(100% - 40px);
+  }
+}
+
+@media (max-width: 1100px) {
+  .page-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    width: 100%;
+  }
+
+  .reader-page {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 900px) {
+  .header-top,
+  .nav-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .category-grid,
+  .symbols-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .tts-dock {
+    grid-template-columns: 1fr;
+  }
+
+  .controls-section {
+    grid-template-columns: 1fr;
+  }
+
+  .story-header h2 {
+    font-size: 2.4rem;
+  }
+
+  .story-text {
+    max-width: 100%;
+  }
+
+  .panel {
+    padding: 24px 28px;
+  }
+
+  .page-main {
+    padding: 16px 20px 28px;
+  }
+
+  /* Fandom page responsive */
+  .category-buttons {
+    gap: 8px;
+    justify-content: flex-start;
+  }
+
+  .category-btn {
+    padding: 9px 18px;
+    font-size: 0.9rem;
+  }
+
+  .fandom-item {
+    padding: 16px 22px;
+  }
+
+  .fandom-name {
+    font-size: 1rem;
+  }
+
+  .work-count {
+    font-size: 1.1rem;
+  }
+
+  .fandom-search-section {
+    padding: 22px;
+    margin-bottom: 32px;
+  }
+
+  .search-input-wrapper {
+    flex-direction: column;
+  }
+
+  .fandom-search-btn {
+    width: 100%;
+    padding: 12px;
+  }
+
+  /* TTS responsive */
+  .tts-main-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .tts-left-controls {
+    justify-content: center;
+  }
+
+  .tts-right-controls,
+  .tts-inline-top,
+  .tts-inline-bottom {
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Auth responsive */
+  .auth-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .auth-page-main {
+    width: min(760px, calc(100% - 24px));
+    margin-top: 18px;
+  }
+
+  .auth-info-panel,
+  .auth-card {
+    border-radius: 12px;
+    padding: 18px;
+  }
+}
+
+@media (max-width: 760px) {
+  .main-nav {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .panel {
+    padding: 20px 18px;
+  }
+
+  .page-main {
+    padding: 12px 16px 24px;
+  }
+
+  .work-heading,
+  .chapter-nav-bar {
+    grid-template-columns: 1fr;
+  }
+
+  .work-heading {
+    flex-direction: column;
+  }
+
+  .updated-meta {
+    text-align: left;
+  }
+
+  .page-title {
+    font-size: 2.1rem;
+  }
+
+  .search-form input {
+    width: 170px;
+  }
+
+  .story-top-nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .story-header {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .summary-box,
+  .chapter-nav-bar {
+    margin-left: 18px;
+    margin-right: 18px;
+  }
+
+  .story-text {
+    padding-left: 18px;
+    padding-right: 18px;
+    font-size: 0.98rem;
+    line-height: 1.85;
+  }
+
+  .story-text h3 {
+    font-size: 1.65rem;
+  }
+
+  .ai-orb-container {
+    width: 118px;
+    height: 118px;
+    right: 12px;
+    bottom: 250px;
+  }
+
+  #aiOrbCanvas {
+    width: 118px;
+    height: 118px;
+  }
+
+  .ai-orb-label {
+    width: 52px;
+    height: 52px;
+    font-size: 0.72rem;
+  }
+
+  body[data-page="reader"] {
+    padding-bottom: 210px;
+  }
+
+  /* Fandom page mobile */
+  .fandom-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 18px;
+  }
+
+  .fandom-item:hover {
+    transform: translateX(4px);
+  }
+
+  .fandom-info {
+    width: 100%;
+  }
+
+  .fandom-stats {
+    width: 100%;
+    justify-content: flex-start;
+    margin-left: 0;
+  }
+
+  .category-btn {
+    flex: 1 1 calc(50% - 8px);
+    min-width: 120px;
+    text-align: center;
+    padding: 10px 12px;
+  }
+
+  .fandom-search-section {
+    padding: 18px;
+  }
+
+  /* TTS mobile */
+  .story-action-row {
+    justify-content: center;
+  }
+
+  .toggle-tts-tab {
+    right: 12px;
+  }
+
+  .tts-wrapper.collapsed .toggle-tts-tab {
+    bottom: 8px;
+  }
+}

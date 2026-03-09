@@ -1,0 +1,158 @@
+/* HEADER AND NAVIGATION */
+.site-header {
+  background: #f3efe5;
+  border-bottom: 1px solid #d8ccb8;
+}
+
+.header-top {
+  padding: 12px 28px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.logo-wrap {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.logo-wrap:hover {
+  transform: translateY(-1px);
+}
+
+.logo-mark {
+  width: 62px;
+  height: 62px;
+  border-radius: 6px;
+  border: none;
+  background: url("../Elements/Logo.png") center center / contain no-repeat;
+  color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0;
+  line-height: 0;
+  overflow: hidden;
+}
+
+.logo-copy h1 {
+  margin: 0;
+  color: var(--red);
+  font-size: 1rem;
+  line-height: 1.1;
+  font-family: var(--font-serif);
+}
+
+.logo-copy p {
+  margin: 2px 0 0;
+  color: var(--red);
+  font-size: 0.72rem;
+  line-height: 1;
+  font-family: var(--font-sans);
+}
+
+.auth-links {
+  font-size: 0.9rem;
+  padding-top: 0;
+  align-self: center;
+  display: flex;
+  align-items: center;
+  color: var(--red);
+  font-weight: 700;
+}
+
+.auth-links a {
+  color: var(--red);
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.auth-links a:hover {
+  text-decoration: underline;
+  opacity: 0.85;
+}
+
+.auth-links span {
+  margin: 0 8px;
+}
+
+.nav-bar {
+  background: #980d0d;
+  border-top: 1px solid #86161a;
+  border-bottom: 1px solid #86161a;
+}
+
+.nav-inner {
+  padding: 0 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+}
+
+.main-nav {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.main-nav a {
+  color: var(--white-soft);
+  text-decoration: none;
+  font-size: 0.92rem;
+  font-weight: 700;
+  padding: 13px 0;
+  transition: opacity 0.2s ease;
+}
+
+.main-nav a.active,
+.main-nav a:hover {
+  text-decoration: underline;
+  opacity: 0.95;
+}
+
+.search-form {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 7px 0;
+}
+
+.search-form input {
+  width: 230px;
+  height: 34px;
+  border: 1px solid #f0d4bf;
+  border-radius: 6px;
+  padding: 0 12px;
+  background: #fffdf8;
+  font-size: 0.9rem;
+}
+
+.search-form button {
+  height: 34px;
+  border: none;
+  border-radius: 6px;
+  background: #fff6ea;
+  color: var(--maroon);
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0 18px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.search-form button:hover {
+  background: #fffaf2;
+  transform: translateY(-1px);
+}
+
+.auth-greeting {
+  color: var(--red);
+}
+
+.auth-links a.active {
+  text-decoration: underline;
+}
