@@ -14,6 +14,90 @@ function initFandomPage() {
 
   var currentCategory = 'all';
 
+  var currentCategory = 'all';
+
+  // --- ADD THIS TO DYNAMICALLY CREATE & UPDATE FANDOMS ---
+  // 1. Retrieve uploaded works
+  var uploadedWorks = [];
+  try {
+    var rawWorks = localStorage.getItem('ao3-uploaded-works');
+    if (rawWorks) {
+      uploadedWorks = JSON.parse(rawWorks);
+    }
+  } catch (error) {
+    console.error("Could not load uploaded works", error);
+  }
+
+  // Helper to safely display text
+  function escapeHtml(value) {
+    return String(value || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+  }
+
+  // Count uploaded works by fandom and store category
+  var uploadedFandomStats = {};
+  if (Array.isArray(uploadedWorks)) {
+    uploadedWorks.forEach(function(work) {
+      if (!work || !work.fandom) return;
+      var fName = work.fandom.trim();
+      var fNameLower = fName.toLowerCase();
+      
+      if (!uploadedFandomStats[fNameLower]) {
+        uploadedFandomStats[fNameLower] = {
+          name: fName,
+          category: work.categoryName || 'Other Media', // fallback category for new fandoms
+          count: 0
+        };
+      }
+      uploadedFandomStats[fNameLower].count++;
+    });
+  }
+
+  // Update existing hardcoded fandoms
+  var existingFandomNames = [];
+  fandomItems.forEach(function(item) {
+    var fandomName = item.querySelector('.fandom-name').textContent.trim();
+    var fNameLower = fandomName.toLowerCase();
+    existingFandomNames.push(fNameLower);
+    
+    var countElement = item.querySelector('.work-count');
+    
+    if (!item.hasAttribute('data-base-count')) {
+      item.setAttribute('data-base-count', countElement.textContent.trim());
+    }
+    var baseCount = parseInt(item.getAttribute('data-base-count'), 10) || 0;
+    
+    var newUploadsCount = uploadedFandomStats[fNameLower] ? uploadedFandomStats[fNameLower].count : 0;
+    countElement.textContent = baseCount + newUploadsCount;
+  });
+
+  // Create new fandom cards for completely new fandoms
+  Object.keys(uploadedFandomStats).forEach(function(fNameLower) {
+    if (existingFandomNames.indexOf(fNameLower) === -1) {
+      var stats = uploadedFandomStats[fNameLower];
+      var newLink = document.createElement('a');
+      newLink.href = 'browse-works.html';
+      newLink.className = 'fandom-item';
+      newLink.setAttribute('data-category', stats.category);
+      
+      newLink.innerHTML = 
+        '<div class="fandom-info">' +
+          '<h4 class="fandom-name">' + escapeHtml(stats.name) + '</h4>' +
+          '<span class="fandom-category">' + escapeHtml(stats.category) + '</span>' +
+        '</div>' +
+        '<div class="fandom-stats">' +
+          '<span class="work-count">' + stats.count + '</span>' +
+          '<span class="work-label">' + (stats.count === 1 ? 'work' : 'works') + '</span>' +
+        '</div>';
+      
+      if (fandomsList) {
+        fandomsList.insertBefore(newLink, fandomsList.firstChild); // Adds to the very top of the list!
+      }
+    }
+  });
+
+  // Re-query the fandom list so the search bar and clicks work on the new cards!
+  fandomItems = document.querySelectorAll('.fandom-item');
+
   // Create no-results message element
   var noResultsMsg = document.createElement('div');
   noResultsMsg.className = 'no-fandoms-message';
@@ -99,6 +183,20 @@ function initFandomPage() {
     item.style.animation = 'slideDown 0.5s ease ' + (0.4 + index * 0.05) + 's both';
   });
 
+  // Restore category/fandom context from query params when navigating back from a work.
+  var queryParams = new URLSearchParams(window.location.search);
+  var categoryParam = queryParams.get('category');
+  var fandomParam = queryParams.get('fandom');
+
+  if (categoryParam) {
+    filterByCategory(categoryParam);
+  }
+
+  if (fandomParam && searchInput) {
+    searchInput.value = fandomParam;
+    performSearch();
+  }
+
   // Handle fandom item clicks to pass fandom info to browse-works page
   fandomItems.forEach(function(item) {
     item.addEventListener('click', function(e) {
@@ -107,7 +205,7 @@ function initFandomPage() {
       localStorage.setItem('selectedFandom', fandomName);
       localStorage.setItem('selectedFandomCategory', fandomCategory);
       e.preventDefault();
-      window.location.href = 'browse-works.html?fandom=' + encodeURIComponent(fandomName);
+      window.location.href = 'browse-works.html?fandom=' + encodeURIComponent(fandomName) + '&category=' + encodeURIComponent(fandomCategory);
     });
   });
 }

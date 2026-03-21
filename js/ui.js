@@ -10,6 +10,25 @@ if (sidebarToggle && pageLayout) {
   });
 }
 
+// Global search routing for non-browse pages
+const pageType = document.body ? document.body.getAttribute("data-page") : "";
+if (pageType !== "browse") {
+  document.querySelectorAll(".search-form").forEach(function (form) {
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+      var input = form.querySelector("input[type='text']");
+      var query = input ? String(input.value || "").trim() : "";
+      var target = "browse-works.html";
+
+      if (query) {
+        target += "?q=" + encodeURIComponent(query);
+      }
+
+      window.location.href = target;
+    });
+  });
+}
+
 // Filter collapse toggles
 const filterToggles = document.querySelectorAll(".filter-toggle");
 
@@ -155,7 +174,10 @@ function initSymbolsPopup() {
   symbolBadges.forEach(function (badge) {
     badge.style.cursor = "pointer";
     badge.setAttribute("title", "Show symbol guide");
-    badge.addEventListener("click", function () {
+    badge.addEventListener("click", function (event) {
+      // Prevent card click handlers from navigating away before the modal opens.
+      event.preventDefault();
+      event.stopPropagation();
       openModal();
     });
   });

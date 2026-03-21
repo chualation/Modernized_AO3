@@ -4,6 +4,36 @@ const authLinks = document.querySelector(".auth-links");
 const AUTH_STORAGE_KEY = "ao3-auth-user";
 const AUTH_USERS_KEY = "ao3-auth-users";
 
+function renderWriterDashboardLink(isLoggedIn) {
+  const mainNav = document.querySelector(".main-nav");
+  if (!mainNav) {
+    return;
+  }
+
+  const existingLink = mainNav.querySelector('[data-auth-nav="writer-dashboard"]');
+
+  if (!isLoggedIn) {
+    if (existingLink) {
+      existingLink.remove();
+    }
+    return;
+  }
+
+  if (!existingLink) {
+    const writerLink = document.createElement("a");
+    writerLink.href = "writer-dashboard.html";
+    writerLink.textContent = "Writer Dashboard";
+    writerLink.setAttribute("data-auth-nav", "writer-dashboard");
+    mainNav.appendChild(writerLink);
+  }
+
+  const finalLink = mainNav.querySelector('[data-auth-nav="writer-dashboard"]');
+  if (finalLink) {
+    const isWriterPage = window.location.pathname.toLowerCase().indexOf("writer-dashboard.html") !== -1;
+    finalLink.classList.toggle("active", isWriterPage);
+  }
+}
+
 function createAuthLink(text, href, clickHandler) {
   const link = document.createElement("a");
   link.href = href;
@@ -64,17 +94,20 @@ function renderAuthState() {
     const logoutLink = createAuthLink("Log Out", "#", function () {
       localStorage.removeItem(AUTH_STORAGE_KEY);
       renderAuthState();
+      window.location.href = "logged-out.html";
     });
 
     authLinks.appendChild(greeting);
     authLinks.appendChild(createSeparator());
     authLinks.appendChild(logoutLink);
+    renderWriterDashboardLink(true);
     return;
   }
 
   authLinks.appendChild(createAuthLink("Log In", "login.html"));
   authLinks.appendChild(createSeparator());
   authLinks.appendChild(createAuthLink("Sign Up", "register.html"));
+  renderWriterDashboardLink(false);
 }
 
 function setAuthMessage(element, message, isError) {
