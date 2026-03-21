@@ -1,0 +1,126 @@
+/* TTS Constants and Configuration */
+
+const LANGUAGE_ORDER = ["en", "es", "fr", "de", "it", "pt", "hi", "zh", "ja", "ko", "ar"];
+
+const LANGUAGE_LABELS = {
+  en: "English",
+  es: "Spanish",
+  fr: "French",
+  de: "German",
+  it: "Italian",
+  pt: "Portuguese",
+  hi: "Hindi",
+  zh: "Chinese (Mandarin)",
+  ja: "Japanese",
+  ko: "Korean",
+  ar: "Arabic",
+  vi: "Vietnamese",
+  th: "Thai",
+  id: "Indonesian",
+  ms: "Malay",
+  tl: "Filipino",
+  bn: "Bengali",
+  ta: "Tamil",
+  te: "Telugu",
+  ml: "Malayalam",
+  kn: "Kannada",
+  mr: "Marathi",
+  gu: "Gujarati",
+  pa: "Punjabi",
+  ur: "Urdu",
+  fa: "Persian",
+  tr: "Turkish",
+  el: "Greek",
+  uk: "Ukrainian",
+  ru: "Russian",
+  pl: "Polish",
+  cs: "Czech",
+  sk: "Slovak",
+  hu: "Hungarian",
+  ro: "Romanian",
+  bg: "Bulgarian",
+  hr: "Croatian",
+  sr: "Serbian",
+  nl: "Dutch",
+  sv: "Swedish",
+  da: "Danish",
+  no: "Norwegian",
+  fi: "Finnish",
+  he: "Hebrew",
+  af: "Afrikaans"
+};
+
+const FEMALE_VOICE_HINTS = [
+  "female", "woman", "girl", "zira", "aria", "jenny", "susan", "hazel", "samantha", "victoria", "karen", "siri", "anna", "emma", "lucia", "maria", "sofia", "helena", "mei", "na", "chloe",
+  "mujer", "femme", "frau", "donna", "mulher", "nữ", "女", "여자", "महिला", "kadın", "feminin"
+];
+
+const MALE_VOICE_HINTS = [
+  "male", "man", "boy", "david", "mark", "george", "james", "daniel", "alex", "thomas", "michael", "john", "paul", "diego", "carlos", "jorge", "miguel", "takumi", "hiro", "liam", "oliver",
+  "hombre", "homme", "herr", "uomo", "homem", "nam", "男", "남자", "पुरुष", "erkek", "masculin"
+];
+
+const PREFERRED_ACCENTS_BY_LANGUAGE = {
+  en: ["US", "GB", "AU", "CA", "IN", "IE", "NZ", "ZA", "PH", "SG"],
+  es: ["ES", "MX", "AR", "CO", "CL", "US"],
+  fr: ["FR", "CA", "BE", "CH"],
+  de: ["DE", "AT", "CH"],
+  it: ["IT", "CH"],
+  pt: ["BR", "PT"],
+  ar: ["SA", "EG", "AE", "MA"],
+  zh: ["CN", "TW", "HK"],
+  ja: ["JP"],
+  ko: ["KR"],
+  hi: ["IN"]
+};
+
+const LANGUAGE_ACCENTS_FOR_ENGLISH = [
+  { code: "zh", label: "Chinese accent" },
+  { code: "ja", label: "Japanese accent" },
+  { code: "ko", label: "Korean accent" },
+  { code: "es", label: "Spanish accent" },
+  { code: "fr", label: "French accent" },
+  { code: "de", label: "German accent" },
+  { code: "it", label: "Italian accent" },
+  { code: "pt", label: "Portuguese accent" },
+  { code: "hi", label: "Hindi accent" },
+  { code: "ar", label: "Arabic accent" },
+  { code: "ru", label: "Russian accent" },
+  { code: "th", label: "Thai accent" },
+  { code: "vi", label: "Vietnamese accent" }
+];
+
+const ACCENT_LABELS = {
+  US: "US accent",
+  GB: "UK accent",
+  AU: "Australian accent",
+  IN: "Indian accent",
+  CA: "Canadian accent",
+  IE: "Irish accent",
+  ZA: "South African accent",
+  NZ: "New Zealand accent",
+  ES: "Spain accent",
+  MX: "Mexican accent",
+  FR: "France accent",
+  DE: "German accent",
+  IT: "Italian accent",
+  BR: "Brazilian accent",
+  PT: "Portuguese accent",
+  JP: "Japanese accent",
+  KR: "Korean accent",
+  CN: "Chinese accent",
+  TW: "Taiwanese accent",
+  HK: "Hong Kong accent",
+  SA: "Saudi accent",
+  EG: "Egyptian accent",
+  AE: "Emirati accent",
+  MA: "Moroccan accent",
+  CH: "Swiss accent",
+  AT: "Austrian accent",
+  BE: "Belgian accent",
+  AR: "Argentinian accent",
+  CO: "Colombian accent",
+  CL: "Chilean accent",
+  PH: "Filipino accent",
+  SG: "Singaporean accent"
+};
