@@ -405,7 +405,7 @@
 
 .category-card,
 .symbol-card,
-.browse-card {
+.browse-card:not(.work-card) {
   background: #fff6ea;
   border: 1px solid var(--panel-border);
   border-radius: 10px;
@@ -415,7 +415,7 @@
 
 .category-card:hover,
 .symbol-card:hover,
-.browse-card:hover {
+.browse-card:not(.work-card):hover {
   transform: translateY(-2px);
   box-shadow: none;
 }
@@ -430,13 +430,13 @@
 
 .category-card h3,
 .symbol-card h3,
-.browse-card h3 {
+.browse-card:not(.work-card) h3 {
   margin: 0 0 8px;
   color: var(--maroon);
   font-family: var(--font-serif);
 }
 
-.browse-list {
+.browse-list:not(.work-list) {
   display: grid;
   gap: 14px;
 }

@@ -78,3 +78,136 @@
     transform: translateY(0);
   }
 }
+
+/* SHARED PAGE ANIMATIONS */
+body .site-header {
+  animation: slideDown 0.42s ease-out both;
+}
+
+body .page-main,
+body .home-frame {
+  animation: pageFadeUp 0.44s ease-out both;
+}
+
+body .panel,
+body .work-card,
+body .browse-card,
+body .fandom-item,
+body .category-card,
+body .symbol-card,
+body .writer-intro,
+body .writer-toolbar,
+body .writer-form,
+body .story-header,
+body .story-details-box,
+body .story-text,
+body .chapter-nav-bar,
+body .tts-wrapper {
+  animation: pageFadeUp 0.38s ease-out both;
+}
+
+body .work-list > *:nth-child(1),
+body .browse-list > *:nth-child(1),
+body .category-grid > *:nth-child(1),
+body .symbols-grid > *:nth-child(1) {
+  animation-delay: 0.03s;
+}
+
+body .work-list > *:nth-child(2),
+body .browse-list > *:nth-child(2),
+body .category-grid > *:nth-child(2),
+body .symbols-grid > *:nth-child(2) {
+  animation-delay: 0.07s;
+}
+
+body .work-list > *:nth-child(3),
+body .browse-list > *:nth-child(3),
+body .category-grid > *:nth-child(3),
+body .symbols-grid > *:nth-child(3) {
+  animation-delay: 0.11s;
+}
+
+body .work-list > *:nth-child(4),
+body .browse-list > *:nth-child(4),
+body .category-grid > *:nth-child(4),
+body .symbols-grid > *:nth-child(4) {
+  animation-delay: 0.15s;
+}
+
+body .work-list > *:nth-child(5),
+body .browse-list > *:nth-child(5) {
+  animation-delay: 0.19s;
+}
+
+body .work-list > *:nth-child(6),
+body .browse-list > *:nth-child(6) {
+  animation-delay: 0.23s;
+}
+
+body .work-list > *:nth-child(7),
+body .browse-list > *:nth-child(7) {
+  animation-delay: 0.27s;
+}
+
+body .work-list > *:nth-child(8),
+body .browse-list > *:nth-child(8) {
+  animation-delay: 0.31s;
+}
+
+body .story-text p {
+  animation: textFade 0.35s ease both;
+}
+
+/* ABOUT PAGE */
+body[data-page="about"] .about-page {
+  animation: pageFadeUp 0.44s ease-out both;
+}
+
+body[data-page="about"] .about-title,
+body[data-page="about"] .about-tagline,
+body[data-page="about"] .about-card,
+body[data-page="about"] .feature-item,
+body[data-page="about"] .about-stat {
+  animation: pageFadeUp 0.38s ease-out both;
+}
+
+body[data-page="about"] .about-title {
+  animation-delay: 0.03s;
+}
+
+body[data-page="about"] .about-tagline {
+  animation-delay: 0.08s;
+}
+
+body[data-page="about"] .about-card:nth-of-type(1) {
+  animation-delay: 0.12s;
+}
+
+body[data-page="about"] .about-card:nth-of-type(2) {
+  animation-delay: 0.16s;
+}
+
+body[data-page="about"] .about-card:nth-of-type(3) {
+  animation-delay: 0.2s;
+}
+
+body[data-page="about"] .about-card:nth-of-type(4) {
+  animation-delay: 0.24s;
+}
+
+body[data-page="about"] .about-card:nth-of-type(5) {
+  animation-delay: 0.28s;
+}
+
+body[data-page="about"] .about-card:nth-of-type(6) {
+  animation-delay: 0.32s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

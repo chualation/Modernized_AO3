@@ -8,6 +8,28 @@
   padding: 34px 32px 30px;
 }
 
+.browse-top-nav {
+  margin-bottom: 14px;
+}
+
+.browse-back-btn {
+  border: 1px solid #dbc7b1;
+  background: #f8efe2;
+  color: #7f1f1f;
+  border-radius: 8px;
+  padding: 9px 14px;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease, border-color 0.2s ease;
+}
+
+.browse-back-btn:hover {
+  background: #f1e4d3;
+  border-color: #cfb292;
+  transform: translateY(-1px);
+}
+
 .browse-intro {
   margin-bottom: 24px;
 }
@@ -110,25 +132,12 @@
   text-decoration: underline;
 }
 
-.browse-list {
-  display: grid;
-  gap: 16px;
-  margin-top: 22px;
+.browse-list.work-list {
+  margin-top: 18px;
 }
 
 .browse-card {
-  background: #fff9f0;
-  border: 1px solid #dfcfba;
-  border-radius: 10px;
-  padding: 20px;
   cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-}
-
-.browse-card:hover {
-  transform: translateY(-2px);
-  border-color: #ccb39a;
-  box-shadow: 0 10px 20px rgba(67, 42, 34, 0.08);
 }
 
 .browse-filter-hint {
@@ -157,7 +166,6 @@ body.browse-filtering .browse-filter-hint {
   display: block;
 }
 
-body.browse-filtered .browse-hub-grid,
 body.browse-filtered .browse-links-row {
   display: none;
 }
@@ -175,6 +183,11 @@ body.browse-filtered .browse-links-row {
 @media (max-width: 560px) {
   .browse-panel {
     padding: 20px 14px 16px;
+  }
+
+  .browse-back-btn {
+    width: 100%;
+    justify-content: center;
   }
 
   .browse-intro .page-title {
