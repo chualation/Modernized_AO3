@@ -47,102 +47,284 @@
     </div>
   </header>
 
-  <main class="container page-main single-column browse-page">
-    <section class="panel browse-panel">
-      <div class="browse-intro">
-        <h2 class="page-title">Browse Works</h2>
-        <p class="page-subtitle">Discover fanfiction through tags, categories, ratings, and completion status.</p>
-      </div>
+  <main class="home-frame browse-frame">
+    <div class="content-topbar">
+      <button id="sidebarToggle" class="sidebar-toggle" type="button" aria-label="Toggle sidebar">☰</button>
+    </div>
 
-      <div class="browse-hub-grid">
-        <article class="browse-hub-card">
-          <h3>By Rating</h3>
-          <ul class="browse-options-list">
-            <li><button class="browse-option-label" type="button" data-filter-group="rating" data-filter-value="General Audiences">General Audiences</button><span class="browse-option-note">Suitable for all ages</span></li>
-            <li><button class="browse-option-label" type="button" data-filter-group="rating" data-filter-value="Teen And Up Audiences">Teen And Up Audiences</button><span class="browse-option-note">Ages 13 and up</span></li>
-            <li><button class="browse-option-label" type="button" data-filter-group="rating" data-filter-value="Mature">Mature</button><span class="browse-option-note">Ages 18 and up</span></li>
-            <li><button class="browse-option-label" type="button" data-filter-group="rating" data-filter-value="Explicit">Explicit</button><span class="browse-option-note">Adult content</span></li>
-            <li><button class="browse-option-label" type="button" data-filter-group="rating" data-filter-value="Not Rated">Not Rated</button><span class="browse-option-note">No rating provided</span></li>
-          </ul>
-        </article>
+    <div class="page-layout" id="pageLayout">
+      <aside class="sidebar" id="sidebar">
+        <section class="panel sidebar-panel search-panel">
+          <h3>Search Within Results</h3>
+          <input id="browseSearchWithin" class="sidebar-input" type="text" placeholder="Search within results" />
+        </section>
 
-        <article class="browse-hub-card">
-          <h3>By Category</h3>
-          <ul class="browse-options-list">
-            <li><button class="browse-option-label" type="button" data-filter-group="category" data-filter-value="F/M">F/M</button><span class="browse-option-note">Female/Male relationships</span></li>
-            <li><button class="browse-option-label" type="button" data-filter-group="category" data-filter-value="M/M">M/M</button><span class="browse-option-note">Male/Male relationships</span></li>
-            <li><button class="browse-option-label" type="button" data-filter-group="category" data-filter-value="F/F">F/F</button><span class="browse-option-note">Female/Female relationships</span></li>
-            <li><button class="browse-option-label" type="button" data-filter-group="category" data-filter-value="Gen">Gen</button><span class="browse-option-note">No romantic focus</span></li>
-            <li><button class="browse-option-label" type="button" data-filter-group="category" data-filter-value="Multi">Multi</button><span class="browse-option-note">Multiple relationship types</span></li>
-            <li><button class="browse-option-label" type="button" data-filter-group="category" data-filter-value="Other">Other</button><span class="browse-option-note">Other relationship types</span></li>
-          </ul>
-        </article>
+        <section class="panel sidebar-panel filter-panel">
+          <h3>Filter Works</h3>
 
-        <article class="browse-hub-card">
-          <h3>By Word Count</h3>
-          <ul class="browse-options-list">
-            <li><button class="browse-option-label" type="button" data-filter-group="words" data-filter-value="under-1000">Under 1,000 words</button><span class="browse-option-note">Quick reads</span></li>
-            <li><button class="browse-option-label" type="button" data-filter-group="words" data-filter-value="1000-5000">1,000 - 5,000 words</button><span class="browse-option-note">Short stories</span></li>
-            <li><button class="browse-option-label" type="button" data-filter-group="words" data-filter-value="5000-10000">5,000 - 10,000 words</button><span class="browse-option-note">Medium length</span></li>
-            <li><button class="browse-option-label" type="button" data-filter-group="words" data-filter-value="10000-50000">10,000 - 50,000 words</button><span class="browse-option-note">Long stories</span></li>
-            <li><button class="browse-option-label" type="button" data-filter-group="words" data-filter-value="50000-plus">50,000+ words</button><span class="browse-option-note">Novel length</span></li>
-          </ul>
-        </article>
+          <div class="filter-block collapsible open">
+            <button class="filter-toggle" type="button">
+              <span>Rating</span>
+              <span class="filter-arrow">⌃</span>
+            </button>
+            <div class="filter-content">
+              <div class="filter-options">
+                <label class="filter-option"><input type="checkbox" data-filter-group="rating" value="General Audiences" /> General Audiences</label>
+                <label class="filter-option"><input type="checkbox" data-filter-group="rating" value="Teen And Up Audiences" /> Teen And Up Audiences</label>
+                <label class="filter-option"><input type="checkbox" data-filter-group="rating" value="Mature" /> Mature</label>
+                <label class="filter-option"><input type="checkbox" data-filter-group="rating" value="Explicit" /> Explicit</label>
+                <label class="filter-option"><input type="checkbox" data-filter-group="rating" value="Not Rated" /> Not Rated</label>
+              </div>
+            </div>
+          </div>
 
-        <article class="browse-hub-card">
-          <h3>By Completion Status</h3>
-          <ul class="browse-options-list">
-            <li><button class="browse-option-label" type="button" data-filter-group="status" data-filter-value="Complete Works">Complete Works</button><span class="browse-option-note">Finished stories</span></li>
-            <li><button class="browse-option-label" type="button" data-filter-group="status" data-filter-value="Works In Progress">Works In Progress</button><span class="browse-option-note">Ongoing stories</span></li>
-            <li><button class="browse-option-label" type="button" data-filter-group="status" data-filter-value="Recently Updated">Recently Updated</button><span class="browse-option-note">Latest updates</span></li>
-            <li><button class="browse-option-label" type="button" data-filter-group="status" data-filter-value="One-Shots">One-Shots</button><span class="browse-option-note">Single chapter stories</span></li>
-            <li><button class="browse-option-label" type="button" data-filter-group="clear" data-filter-value="all">Clear Filters</button><span class="browse-option-note">Show all featured works again</span></li>
-          </ul>
-        </article>
-      </div>
+          <div class="filter-block collapsible open">
+            <button class="filter-toggle" type="button">
+              <span>Warnings</span>
+              <span class="filter-arrow">⌃</span>
+            </button>
+            <div class="filter-content">
+              <div class="filter-options">
+                <label class="filter-option"><input type="checkbox" data-filter-group="warnings" value="No Archive Warnings Apply" /> No Archive Warnings Apply</label>
+                <label class="filter-option"><input type="checkbox" data-filter-group="warnings" value="Graphic Violence" /> Graphic Violence</label>
+                <label class="filter-option"><input type="checkbox" data-filter-group="warnings" value="Rape/Non-Con" /> Rape/Non-Con</label>
+                <label class="filter-option"><input type="checkbox" data-filter-group="warnings" value="Major Character Death" /> Major Character Death</label>
+                <label class="filter-option"><input type="checkbox" data-filter-group="warnings" value="Underage" /> Underage</label>
+                <label class="filter-option"><input type="checkbox" data-filter-group="warnings" value="Creator Chose Not To Use Archive Warnings" /> Creator Chose Not To Use Archive Warnings</label>
+              </div>
+            </div>
+          </div>
 
-      <article class="browse-hub-card browse-links-row">
-        <h3>Quick Links</h3>
-        <ul class="browse-quick-links">
-          <li><a href="work.html">Most Kudos This Week</a></li>
-          <li><a href="work-book3.html">Most Bookmarked</a></li>
-          <li><a href="browse-fandom.html">Trending Now</a></li>
-          <li><a href="browse-works.html">New to the Archive</a></li>
-          <li><a href="work-book2.html">Random Works</a></li>
-          <li><a href="browse-fandom.html">Collections</a></li>
-        </ul>
-      </article>
+          <div class="filter-block collapsible open">
+            <button class="filter-toggle" type="button">
+              <span>Categories</span>
+              <span class="filter-arrow">⌃</span>
+            </button>
+            <div class="filter-content">
+              <div class="filter-options">
+                <label class="filter-option"><input type="checkbox" data-filter-group="categories" value="F/F" /> F/F</label>
+                <label class="filter-option"><input type="checkbox" data-filter-group="categories" value="F/M" /> F/M</label>
+                <label class="filter-option"><input type="checkbox" data-filter-group="categories" value="Gen" /> Gen</label>
+                <label class="filter-option"><input type="checkbox" data-filter-group="categories" value="M/M" /> M/M</label>
+                <label class="filter-option"><input type="checkbox" data-filter-group="categories" value="Multi" /> Multi</label>
+                <label class="filter-option"><input type="checkbox" data-filter-group="categories" value="Other" /> Other</label>
+              </div>
+            </div>
+          </div>
 
-      <p class="browse-filter-hint">Tip: click any red browse label to filter the featured works below.</p>
+          <div class="filter-block collapsible open">
+            <button class="filter-toggle" type="button">
+              <span>Completion Status</span>
+              <span class="filter-arrow">⌃</span>
+            </button>
+            <div class="filter-content">
+              <div class="filter-options">
+                <label class="filter-option"><input type="checkbox" data-filter-group="status" value="Complete Works" /> Complete Works</label>
+                <label class="filter-option"><input type="checkbox" data-filter-group="status" value="Works In Progress" /> Works In Progress</label>
+                <label class="filter-option"><input type="checkbox" data-filter-group="status" value="Recently Updated" /> Recently Updated</label>
+                <label class="filter-option"><input type="checkbox" data-filter-group="status" value="One-Shots" /> One-Shots</label>
+              </div>
+            </div>
+          </div>
 
-      <div class="browse-list">
-        <article class="browse-card" data-rating="Teen And Up Audiences" data-category="F/M" data-status="Complete Works" data-words="45230">
-          <h3><a href="work.html">The Stars Between Us</a></h3>
-          <p class="browse-meta">Original Work • Romance • Science Fiction • 45,230 words <span class="work-chapters">• Chapters: 2</span></p>
-          <p class="browse-text">
-            A gentle long-distance love story between ground control and deep space.
-          </p>
-        </article>
+          <div class="filter-block collapsible open">
+            <button class="filter-toggle" type="button">
+              <span>Word Count</span>
+              <span class="filter-arrow">⌃</span>
+            </button>
+            <div class="filter-content">
+              <div class="filter-options">
+                <label class="filter-option"><input type="checkbox" data-filter-group="words" value="under-5000" /> Under 5,000</label>
+                <label class="filter-option"><input type="checkbox" data-filter-group="words" value="5000-20000" /> 5,000 - 20,000</label>
+                <label class="filter-option"><input type="checkbox" data-filter-group="words" value="20000-50000" /> 20,000 - 50,000</label>
+                <label class="filter-option"><input type="checkbox" data-filter-group="words" value="50000-plus" /> 50,000+</label>
+                <label class="filter-option"><input type="checkbox" data-filter-group="words" value="10000-plus" /> 10,000+</label>
+              </div>
+            </div>
+          </div>
 
-        <article class="browse-card" data-rating="Mature" data-category="Gen" data-status="Works In Progress" data-words="72150">
-          <h3><a href="work-book2.html">Shadows of the Forgotten City</a></h3>
-          <p class="browse-meta">Original Work • Horror • Mystery • 72,150 words <span class="work-chapters">• Chapters: 5</span></p>
-          <p class="browse-text">
-            Archaeology turns into survival when a buried city refuses to stay silent.
-          </p>
-        </article>
+          <div class="filter-block">
+            <h4>Include Tags</h4>
+            <input id="browseIncludeTags" class="sidebar-input" type="text" placeholder="Comma separated" />
+          </div>
 
-        <article class="browse-card" data-rating="General Audiences" data-category="F/M" data-status="Complete Works" data-words="23840">
-          <h3><a href="work-book3.html">Coffee Shop Confessions</a></h3>
-          <p class="browse-meta">Original Work • Romance • Fluff • 23,840 words <span class="work-chapters">• Chapters: 3</span></p>
-          <p class="browse-text">
-            Snow, coffee, and overdue feelings in a soft overnight romance.
-          </p>
-        </article>
-      </div>
+          <div class="filter-block">
+            <h4>Exclude Tags</h4>
+            <input id="browseExcludeTags" class="sidebar-input" type="text" placeholder="Comma separated" />
+          </div>
 
-      <p class="browse-no-results" id="browseNoResults" role="status" aria-live="polite">No works found for this selection.</p>
-    </section>
+          <div class="filter-actions">
+            <button id="clearBrowseFilters" class="filter-btn" type="button">Clear Filters</button>
+          </div>
+        </section>
+      </aside>
+
+      <section class="main-column">
+        <section class="panel browse-panel home-main-panel">
+          <div class="browse-top-nav">
+            <button id="browseBackBtn" class="browse-back-btn" type="button">← Back</button>
+          </div>
+
+          <div class="browse-intro">
+            <h2 class="page-title">Browse Works</h2>
+            <p class="page-subtitle">Discover fanfiction through tags, categories, ratings, and completion status.</p>
+          </div>
+
+          <article class="browse-hub-card browse-links-row">
+            <h3>Quick Links</h3>
+            <ul class="browse-quick-links">
+              <li><a href="work.html">Most Kudos This Week</a></li>
+              <li><a href="work-book3.html">Most Bookmarked</a></li>
+              <li><a href="browse-fandom.html">Trending Now</a></li>
+              <li><a href="browse-works.html">New to the Archive</a></li>
+              <li><a href="work-book2.html">Random Works</a></li>
+              <li><a href="browse-fandom.html">Collections</a></li>
+            </ul>
+          </article>
+
+          <article class="browse-hub-card browse-links-row" id="relatedSearchesCard">
+            <h3>Popular Fandoms</h3>
+            <ul class="browse-quick-links" id="relatedSearchesList">
+              <li><a href="browse-works.html?fandom=Harry%20Potter&category=Books%20%26%20Literature">Harry Potter</a></li>
+              <li><a href="browse-works.html?fandom=Marvel%20Cinematic%20Universe&category=Movies">Marvel Cinematic Universe</a></li>
+              <li><a href="browse-works.html?fandom=Supernatural&category=TV%20Shows">Supernatural</a></li>
+              <li><a href="browse-works.html?fandom=Star%20Wars&category=Movies">Star Wars</a></li>
+              <li><a href="browse-works.html?fandom=Doctor%20Who&category=TV%20Shows">Doctor Who</a></li>
+              <li><a href="browse-works.html?fandom=The%20Witcher&category=Video%20Games">The Witcher</a></li>
+              <li><a href="browse-works.html?fandom=Attack%20on%20Titan&category=Anime%20%26%20Manga">Attack on Titan</a></li>
+              <li><a href="browse-works.html?fandom=My%20Hero%20Academia&category=Anime%20%26%20Manga">My Hero Academia</a></li>
+            </ul>
+          </article>
+
+          <div class="browse-list work-list">
+            <article class="browse-card work-card"
+              data-rating="Teen And Up Audiences"
+              data-warnings="No Archive Warnings Apply"
+              data-category="F/M"
+              data-status="Complete Works"
+              data-words="45230"
+              data-tags="slow burn,fluff,romance">
+              <div class="work-icons grid-icons">
+                <span class="rating-badge badge-yellow">T</span>
+                <span class="rating-badge badge-blue">&#10003;</span>
+                <span class="rating-badge" style="background:#8e35d3">H</span>
+                <span class="rating-badge badge-green">&#10003;</span>
+              </div>
+              <div class="work-content">
+                <div class="work-heading">
+                  <div>
+                    <h3><a href="work.html">The Stars Between Us</a> <span class="author-inline">by CosmicDreamer</span></h3>
+                    <p class="work-fandom">Original Work</p>
+                  </div>
+                  <div class="updated-meta">
+                    <span>Updated</span>
+                    <strong>15 Feb 2026</strong>
+                  </div>
+                </div>
+                <p class="work-summary">A gentle long-distance love story between ground control and deep space.</p>
+                <div class="tag-row">
+                  <span class="label">Tags:</span>
+                  <span class="tag">Slow Burn</span>
+                  <span class="tag">Fluff</span>
+                  <span class="tag">Romance</span>
+                </div>
+                <div class="stats-row">
+                  <span>Language: English</span>
+                  <span>Words: 45,230</span>
+                  <span>Chapters: 2/2</span>
+                  <span>Hits: 90,460</span>
+                  <span>Kudos: 9,046</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="browse-card work-card"
+              data-rating="Mature"
+              data-warnings="Graphic Violence,Major Character Death"
+              data-category="Gen"
+              data-status="Works In Progress"
+              data-words="72150"
+              data-tags="angst,horror,mystery">
+              <div class="work-icons grid-icons">
+                <span class="rating-badge badge-orange">M</span>
+                <span class="rating-badge badge-purple">!</span>
+                <span class="rating-badge badge-green">G</span>
+                <span class="rating-badge badge-red">&#10005;</span>
+              </div>
+              <div class="work-content">
+                <div class="work-heading">
+                  <div>
+                    <h3><a href="work-book2.html">Shadows of the Forgotten City</a> <span class="author-inline">by MidnightScribe</span></h3>
+                    <p class="work-fandom">Original Work</p>
+                  </div>
+                  <div class="updated-meta">
+                    <span>Updated</span>
+                    <strong>10 Mar 2026</strong>
+                  </div>
+                </div>
+                <p class="work-summary">Archaeology turns into survival when a buried city refuses to stay silent.</p>
+                <div class="tag-row">
+                  <span class="label">Tags:</span>
+                  <span class="tag">Angst</span>
+                  <span class="tag">Horror</span>
+                  <span class="tag">Mystery</span>
+                </div>
+                <div class="stats-row">
+                  <span>Language: English</span>
+                  <span>Words: 72,150</span>
+                  <span>Chapters: 5/?</span>
+                  <span>Hits: 144,300</span>
+                  <span>Kudos: 14,430</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="browse-card work-card"
+              data-rating="General Audiences"
+              data-warnings="No Archive Warnings Apply"
+              data-category="F/M"
+              data-status="Complete Works"
+              data-words="23840"
+              data-tags="fluff,comfort,romance">
+              <div class="work-icons grid-icons">
+                <span class="rating-badge badge-green">G</span>
+                <span class="rating-badge badge-blue">&#10003;</span>
+                <span class="rating-badge" style="background:#8e35d3">H</span>
+                <span class="rating-badge badge-green">&#10003;</span>
+              </div>
+              <div class="work-content">
+                <div class="work-heading">
+                  <div>
+                    <h3><a href="work-book3.html">Coffee Shop Confessions</a> <span class="author-inline">by LatteArtLover</span></h3>
+                    <p class="work-fandom">Original Work</p>
+                  </div>
+                  <div class="updated-meta">
+                    <span>Updated</span>
+                    <strong>17 Feb 2026</strong>
+                  </div>
+                </div>
+                <p class="work-summary">Snow, coffee, and overdue feelings in a soft overnight romance.</p>
+                <div class="tag-row">
+                  <span class="label">Tags:</span>
+                  <span class="tag">Fluff</span>
+                  <span class="tag">Comfort</span>
+                  <span class="tag">Romance</span>
+                </div>
+                <div class="stats-row">
+                  <span>Language: English</span>
+                  <span>Words: 23,840</span>
+                  <span>Chapters: 3/3</span>
+                  <span>Hits: 47,680</span>
+                  <span>Kudos: 4,768</span>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <p class="browse-no-results" id="browseNoResults" role="status" aria-live="polite">No works found for this selection.</p>
+        </section>
+      </section>
+    </div>
   </main>
 
   <!-- JavaScript Modules -->

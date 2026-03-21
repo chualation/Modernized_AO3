@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Writer Dashboard - Archive of Our Own</title>
+
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/header.css" />
+  <link rel="stylesheet" href="css/panels.css" />
+  <link rel="stylesheet" href="css/writer.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body data-page="writer-dashboard">
+  <header class="site-header">
+    <div class="header-top container">
+      <a class="logo-wrap" href="index.html">
+        <div class="logo-mark">AO</div>
+        <div class="logo-copy">
+          <h1>Archive of Our Own</h1>
+          <p>for users, by users</p>
+        </div>
+      </a>
+      <div class="auth-links">
+        <a href="login.html">Log In</a>
+        <span>|</span>
+        <a href="register.html">Sign Up</a>
+      </div>
+    </div>
+
+    <div class="nav-bar">
+      <div class="container nav-inner">
+        <nav class="main-nav">
+          <a href="index.html">Home</a>
+          <a href="browse-fandom.html">Fandoms</a>
+          <a href="browse-works.html">Browse</a>
+          <a href="about.html">About</a>
+        </nav>
+
+        <form class="search-form">
+          <input type="text" placeholder="Search works..." />
+          <button type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </header>
+
+  <main class="container page-main single-column writer-page">
+    <section class="panel writer-panel">
+
+      <div class="writer-intro">
+        <h2 class="page-title">Writer Dashboard</h2>
+        <p class="page-subtitle">Post a new work and publish it to your selected fandom with story metadata and audio settings.</p>
+      </div>
+
+      <div class="writer-toolbar">
+        <button type="button" class="writer-secondary" id="postNewWorkBtn">+ New Work</button>
+      </div>
+
+      <form id="uploadWorkForm" class="writer-form">
+
+        <div class="writer-grid">
+          <label>
+            Title of the work
+            <input id="workTitle" type="text" required placeholder="Example: Through Fire and Starlight" />
+          </label>
+
+          <label>
+            Fandom
+            <input id="workFandom" type="text" required value="Harry Potter" placeholder="Type your fandom" />
+          </label>
+
+          <label>
+            Rating
+            <select id="workRating" class="writer-meta-select" required>
+              <option value="General Audiences">G - General Audiences</option>
+              <option value="Teen And Up Audiences" selected>T - Teen And Up Audiences</option>
+              <option value="Mature">M - Mature</option>
+              <option value="Explicit">E - Explicit: only suitable for adults</option>
+              <option value="Not Rated">- - The work was not given any rating</option>
+            </select>
+            <div id="workRatingSymbol" class="writer-symbol-preview" aria-live="polite"></div>
+          </label>
+
+          <label>
+            Archive Warnings
+            <select id="workWarnings" class="writer-meta-select" required>
+              <option value="Creator Chose Not To Use Archive Warnings" selected>? - The author chose not to warn for content, or Archive Warnings could apply.</option>
+              <option value="Archive Warnings Apply">! - At least one warning applies: graphic violence, major character death, rape, or underage sex.</option>
+              <option value="Warnings May Be Listed In Tags">i - Warnings may be listed in tags, relationships, or the Additional Tags section.</option>
+            </select>
+            <div id="workWarningsSymbol" class="writer-symbol-preview" aria-live="polite"></div>
+          </label>
+
+          <label>
+            Completion Status
+            <select id="workStatus" class="writer-meta-select" required>
+              <option value="Works In Progress">X - This is a work in progress or incomplete/unfulfilled.</option>
+              <option value="Complete Works" selected>✓ - This work is completed/this prompt is filled.</option>
+              <option value="Unknown Status">- - This work's status is unknown.</option>
+            </select>
+            <div id="workStatusSymbol" class="writer-symbol-preview" aria-live="polite"></div>
+          </label>
+
+          <label>
+            Relationship Category
+            <select id="workCategory" class="writer-meta-select" required>
+              <option value="F/F">F - F/F</option>
+              <option value="F/M" selected>M - F/M</option>
+              <option value="Gen">G - Gen: no romantic/sexual relationships, or not the main focus</option>
+              <option value="M/M">N - M/M</option>
+              <option value="Multi">A - Multi: more than one type of relationship</option>
+              <option value="Other">? - Other relationships</option>
+              <option value="None">- - The work was not put in any categories</option>
+            </select>
+            <div id="workCategorySymbol" class="writer-symbol-preview" aria-live="polite"></div>
+          </label>
+
+          <label>
+            Word Count
+            <input id="workWordCount" type="number" step="1" value="0" required readonly />
+          </label>
+        </div>
+
+        <fieldset class="writer-tags">
+          <legend>Tags</legend>
+          <div class="writer-tags-checkboxes">
+            <label><input type="checkbox" value="Slow Burn" checked /> Slow Burn</label>
+            <label><input type="checkbox" value="Angst" checked /> Angst</label>
+            <label><input type="checkbox" value="Fluff" checked /> Fluff</label>
+            <label><input type="checkbox" value="Y/N" checked /> Reader Insert (Y/N)</label>
+          </div>
+          <label class="writer-tags-extra">
+            Extra tags (comma separated)
+            <input id="workExtraTags" type="text" placeholder="Optional additional tags" />
+          </label>
+        </fieldset>
+
+        <fieldset class="writer-chapters" id="writerChaptersFieldset">
+          <legend>Story Chapters</legend>
+          <div id="chapterEditors" class="chapter-editors"></div>
+          <button type="button" id="addChapterBtn" class="writer-secondary chapter-add-btn">+ Add Next Chapter</button>
+        </fieldset>
+
+        <fieldset class="writer-audio">
+          <legend>Audio Settings</legend>
+          <label class="audio-enable-label">
+            <input id="workAudioEnabled" type="checkbox" checked />
+            Enable Text-to-Audio
+          </label>
+          <p class="audio-auto-note">All supported narration languages are applied automatically to every published work.</p>
+        </fieldset>
+
+        <div class="writer-actions">
+          <button type="button" id="saveDraftBtn" class="writer-secondary">Save Draft</button>
+          <button type="button" id="previewWorkBtn" class="writer-secondary">Preview Work</button>
+          <button type="submit" class="writer-primary">Publish Work</button>
+        </div>
+
+        <p id="draftStatus" class="draft-status" aria-live="polite"></p>
+
+        <p id="writerMessage" class="writer-message" aria-live="polite"></p>
+      </form>
+
+      <article id="writerPreviewCard" class="writer-preview" hidden>
+        <h3>Preview</h3>
+        <div id="previewSummary"></div>
+      </article>
+
+      <section class="writer-library" aria-labelledby="writerDraftsTitle">
+        <h3 id="writerDraftsTitle">Your Drafted Works</h3>
+        <p id="writerDraftEmpty" class="writer-library-empty">You do not have any saved drafts yet.</p>
+        <div id="writerDraftList" class="writer-library-list"></div>
+      </section>
+
+      <section class="writer-library" aria-labelledby="writerLibraryTitle">
+        <h3 id="writerLibraryTitle">Your Published Stories</h3>
+        <p id="writerLibraryEmpty" class="writer-library-empty">You have not published any stories yet.</p>
+        <div id="writerLibraryList" class="writer-library-list"></div>
+      </section>
+
+    </section>
+  </main>
+
+  <script src="js/auth.js"></script>
+  <script src="js/upload.js"></script>
+</body>
+</html>

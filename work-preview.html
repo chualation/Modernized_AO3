@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Work Preview - Archive of Our Own</title>
+
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/header.css" />
+  <link rel="stylesheet" href="css/panels.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="stylesheet" href="css/work-preview.css" />
+</head>
+<body data-page="work-preview">
+
+  <header class="site-header">
+    <div class="header-top container">
+      <a class="logo-wrap" href="index.html">
+        <div class="logo-mark">AO</div>
+        <div class="logo-copy">
+          <h1>Archive of Our Own</h1>
+          <p>for users, by users</p>
+        </div>
+      </a>
+      <div class="auth-links">
+        <a href="login.html">Log In</a>
+        <span>|</span>
+        <a href="register.html">Sign Up</a>
+      </div>
+    </div>
+    <div class="nav-bar">
+      <div class="container nav-inner">
+        <nav class="main-nav">
+          <a href="index.html">Home</a>
+          <a href="browse-fandom.html">Fandoms</a>
+          <a href="browse-works.html">Browse</a>
+          <a href="about.html">About</a>
+        </nav>
+        <form class="search-form">
+          <input type="text" placeholder="Search works..." />
+          <button type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </header>
+
+  <main class="container page-main single-column">
+
+    <!-- Preview banner -->
+    <div class="preview-banner">
+      <div class="preview-banner-inner">
+        <span class="preview-banner-label">👁 Preview Mode</span>
+        <span class="preview-banner-note">This is how your work will appear to readers. It has not been published yet.</span>
+      </div>
+      <div class="preview-banner-actions">
+        <button class="writer-secondary preview-back-btn" onclick="window.close()">← Back to Edit</button>
+      </div>
+    </div>
+
+    <!-- Work header -->
+    <section class="panel preview-header-panel" id="previewHeaderPanel">
+      <div class="preview-work-meta">
+        <p class="preview-fandom" id="previewFandom"></p>
+        <h1 class="preview-title" id="previewTitle"></h1>
+        <p class="preview-author">by <span class="preview-author-name">Anonymous</span></p>
+      </div>
+
+      <dl class="preview-meta-grid" id="previewMetaGrid">
+        <div class="preview-meta-item">
+          <dt>Rating</dt>
+          <dd id="metaRating"></dd>
+        </div>
+        <div class="preview-meta-item">
+          <dt>Category</dt>
+          <dd id="metaCategory"></dd>
+        </div>
+        <div class="preview-meta-item">
+          <dt>Status</dt>
+          <dd id="metaStatus"></dd>
+        </div>
+        <div class="preview-meta-item">
+          <dt>Words</dt>
+          <dd id="metaWords"></dd>
+        </div>
+      </dl>
+
+      <div class="preview-tags-row" id="previewTagsRow"></div>
+
+      <div class="preview-langs-row" id="previewLangsRow"></div>
+    </section>
+
+    <!-- Work body -->
+    <section class="panel preview-body-panel">
+      <div class="preview-story-text" id="previewStoryText"></div>
+    </section>
+
+    <!-- Bottom actions -->
+    <div class="preview-footer-actions">
+      <button class="writer-secondary preview-back-btn" onclick="window.close()">← Back to Edit</button>
+      <button class="writer-primary" id="publishFromPreviewBtn">Publish Work</button>
+    </div>
+
+  </main>
+
+  <script>
+    const LANG_NAMES = {
+      tl: '🇵🇭 Filipino', en: '🇬🇧 English', es: '🇪🇸 Spanish',
+      fr: '🇫🇷 French',  de: '🇩🇪 German',  ja: '🇯🇵 Japanese',
+      ko: '🇰🇷 Korean',  zh: '🇨🇳 Chinese', pt: '🇧🇷 Portuguese',
+      hi: '🇮🇳 Hindi',   ta: '🇮🇳 Tamil',   th: '🇹🇭 Thai',
+      ar: '🇸🇦 Arabic',  id: '🇮🇩 Indonesian', vi: '🇻🇳 Vietnamese',
+      tr: '🇹🇷 Turkish', ru: '🇷🇺 Russian',  it: '🇮🇹 Italian',
+    };
+
+    const raw = sessionStorage.getItem('previewWork');
+    if (!raw) {
+      document.getElementById('previewTitle').textContent = 'No preview data found.';
+      document.getElementById('previewStoryText').textContent = 'Please go back to the Writer Dashboard and click "Preview Work".';
+    } else {
+      const work = JSON.parse(raw);
+
+      document.title = `${work.title} — Preview · Archive of Our Own`;
+      document.getElementById('previewFandom').textContent = work.fandom;
+      document.getElementById('previewTitle').textContent = work.title;
+      document.getElementById('metaRating').textContent = work.rating;
+      document.getElementById('metaCategory').textContent = work.category;
+      document.getElementById('metaStatus').textContent = work.status;
+      document.getElementById('metaWords').textContent = Number(work.wc).toLocaleString();
+
+      // Tags
+      const tagsRow = document.getElementById('previewTagsRow');
+      if (work.tags && work.tags.length) {
+        tagsRow.innerHTML = '<span class="preview-tags-label">Tags:</span>' +
+          work.tags.map(t => `<span class="tag">${t}</span>`).join('');
+      }
+
+      // Languages
+      const langsRow = document.getElementById('previewLangsRow');
+      if (work.langs && work.langs.length) {
+        langsRow.innerHTML = '<span class="preview-tags-label">Audio:</span>' +
+          work.langs.map(l => `<span class="tag">${LANG_NAMES[l] || l}</span>`).join('');
+      }
+
+      // Story content — render chapter by chapter when available.
+      const storyEl = document.getElementById('previewStoryText');
+      const chapterEntries = Array.isArray(work.chaptersData) && work.chaptersData.length
+        ? work.chaptersData
+        : [{ title: 'Chapter 1', content: work.content || '' }];
+
+      chapterEntries.forEach((chapter, index) => {
+        const chapterTitle = (chapter.title || '').trim() || `Chapter ${index + 1}`;
+        const heading = document.createElement('h3');
+        heading.textContent = chapterTitle;
+        storyEl.appendChild(heading);
+
+        String(chapter.content || '')
+          .split(/\n\n+/)
+          .forEach(para => {
+            if (!para.trim()) return;
+            const p = document.createElement('p');
+            p.textContent = para.trim();
+            storyEl.appendChild(p);
+          });
+      });
+    }
+
+    document.getElementById('publishFromPreviewBtn').addEventListener('click', () => {
+      sessionStorage.removeItem('previewWork');
+      sessionStorage.removeItem('writerDraft');
+      // Navigate opener to dashboard with a published flag, then close preview
+      if (window.opener && !window.opener.closed) {
+        window.opener.location.href = 'writer-dashboard.html?published=1';
+      }
+      window.close();
+    });
+  </script>
+</body>
+</html>

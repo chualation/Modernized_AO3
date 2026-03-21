@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Archive of Our Own - Recent Works</title>
   
-  <!-- CSS Modules -->
   <link rel="stylesheet" href="css/variables.css" />
   <link rel="stylesheet" href="css/base.css" />
   <link rel="stylesheet" href="css/header.css" />
@@ -57,7 +56,7 @@
       <aside class="sidebar" id="sidebar">
         <section class="panel sidebar-panel search-panel">
           <h3>Search Within Results</h3>
-          <input class="sidebar-input" type="text" placeholder="Search within results" />
+          <input id="homeSearchWithin" class="sidebar-input" type="text" placeholder="Search within results" />
         </section>
 
     <section class="panel sidebar-panel filter-panel">
@@ -110,12 +109,20 @@
               Graphic Violence
             </label>
             <label class="filter-option">
+              <input type="checkbox" data-filter-group="warnings" value="Rape/Non-Con" />
+              Rape/Non-Con
+            </label>
+            <label class="filter-option">
               <input type="checkbox" data-filter-group="warnings" value="Major Character Death" />
               Major Character Death
             </label>
             <label class="filter-option">
               <input type="checkbox" data-filter-group="warnings" value="Underage" />
               Underage
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" data-filter-group="warnings" value="Creator Chose Not To Use Archive Warnings" />
+              Creator Chose Not To Use Archive Warnings
             </label>
           </div>
         </div>
@@ -164,12 +171,20 @@
         <div class="filter-content">
           <div class="filter-options">
             <label class="filter-option">
-              <input type="checkbox" data-filter-group="status" value="Complete Works Only" />
-              Complete Works Only
+              <input type="checkbox" data-filter-group="status" value="Complete Works" />
+              Complete Works
             </label>
             <label class="filter-option">
-              <input type="checkbox" data-filter-group="status" value="Works in Progress" />
-              Works in Progress
+              <input type="checkbox" data-filter-group="status" value="Works In Progress" />
+              Works In Progress
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" data-filter-group="status" value="Recently Updated" />
+              Recently Updated
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" data-filter-group="status" value="One-Shots" />
+              One-Shots
             </label>
           </div>
         </div>
@@ -198,18 +213,26 @@
               <input type="checkbox" data-filter-group="words" value="50000-plus" />
               50,000+
             </label>
+            <label class="filter-option">
+              <input type="checkbox" data-filter-group="words" value="10000-plus" />
+              10,000+
+            </label>
           </div>
         </div>
       </div>
 
       <div class="filter-block">
         <h4>Include Tags</h4>
-        <input class="sidebar-input" type="text" placeholder="Comma separated" />
+        <input id="homeIncludeTags" class="sidebar-input" type="text" placeholder="Comma separated" />
       </div>
 
       <div class="filter-block">
         <h4>Exclude Tags</h4>
-        <input class="sidebar-input" type="text" placeholder="Comma separated" />
+        <input id="homeExcludeTags" class="sidebar-input" type="text" placeholder="Comma separated" />
+      </div>
+
+      <div class="filter-actions">
+        <button id="clearHomeFilters" class="filter-btn" type="button">Clear Filters</button>
       </div>
     </section>
       </aside>
@@ -227,13 +250,15 @@
               class="work-card"
               data-rating="Teen And Up Audiences"
               data-warnings="No Archive Warnings Apply"
-              data-categories="F/M"
-              data-status="Complete Works Only"
+              data-category="F/M"
+              data-status="Complete Works"
               data-words="45230"
+              data-tags="romance,science fiction,slow burn,long distance,space"
             >
               <div class="work-icons grid-icons">
                 <span class="rating-badge badge-yellow">T</span>
-                <span class="rating-badge badge-purple">!</span>
+                <span class="rating-badge badge-blue">&#10003;</span>
+                <span class="rating-badge" style="background:#8e35d3">H</span>
                 <span class="rating-badge badge-green">✓</span>
               </div>
 
@@ -277,14 +302,15 @@
               class="work-card"
               data-rating="Mature"
               data-warnings="Graphic Violence,Major Character Death"
-              data-categories="Gen"
-              data-status="Works in Progress"
+              data-category="Gen"
+              data-status="Works In Progress"
               data-words="72150"
+              data-tags="horror,mystery,adventure,angst,survival"
             >
               <div class="work-icons grid-icons">
                 <span class="rating-badge badge-orange">M</span>
-                <span class="rating-badge badge-orange">!</span>
-                <span class="rating-badge badge-purple">✓</span>
+                <span class="rating-badge badge-purple">!</span>
+                <span class="rating-badge badge-green">G</span>
                 <span class="rating-badge badge-red">✕</span>
               </div>
 
@@ -326,13 +352,15 @@
               class="work-card"
               data-rating="General Audiences"
               data-warnings="No Archive Warnings Apply"
-              data-categories="F/M"
-              data-status="Complete Works Only"
+              data-category="F/M"
+              data-status="Complete Works"
               data-words="23840"
+              data-tags="fluff,romance,coffee shop au,comfort,slice of life"
             >
               <div class="work-icons grid-icons">
                 <span class="rating-badge badge-green">G</span>
-                <span class="rating-badge badge-green">✓</span>
+                <span class="rating-badge badge-blue">&#10003;</span>
+                <span class="rating-badge" style="background:#8e35d3">H</span>
                 <span class="rating-badge badge-green">✓</span>
               </div>
 
@@ -369,6 +397,156 @@
                 </div>
               </div>
             </article>
+
+            <article
+              class="work-card"
+              data-rating="Teen And Up Audiences"
+              data-warnings="No Archive Warnings Apply"
+              data-category="Gen"
+              data-status="Complete Works"
+              data-words="87654"
+              data-tags="action,drama,recovery,team fic,hero"
+            >
+              <div class="work-icons grid-icons">
+                <span class="rating-badge badge-yellow">T</span>
+                <span class="rating-badge badge-blue">&#10003;</span>
+                <span class="rating-badge badge-green">G</span>
+                <span class="rating-badge badge-green">✓</span>
+              </div>
+
+              <div class="work-content">
+                <div class="work-heading">
+                  <div>
+                    <h3><a href="work-book3.html">Avengers: The Long Road Home</a> <span class="author-inline">by StarkArchives</span></h3>
+                    <p class="work-fandom">Marvel Cinematic Universe</p>
+                  </div>
+                  <div class="updated-meta">
+                    <span>Updated</span>
+                    <strong>12 Mar 2026</strong>
+                  </div>
+                </div>
+
+                <p class="work-summary">
+                  Post-Endgame recovery forces the team to reconnect while old wounds and new threats collide.
+                </p>
+
+                <div class="tag-row">
+                  <span class="label">Tags:</span>
+                  <span class="tag">Action</span>
+                  <span class="tag">Drama</span>
+                  <span class="tag">Recovery</span>
+                  <span class="tag">+2 more</span>
+                </div>
+
+                <div class="stats-row">
+                  <span>Language: English</span>
+                  <span>Words: 87,654</span>
+                  <span>Chapters: 6/6</span>
+                  <span>Hits: 98,430</span>
+                  <span>Kudos: 9843</span>
+                </div>
+              </div>
+            </article>
+
+            <article
+              class="work-card"
+              data-rating="General Audiences"
+              data-warnings="No Archive Warnings Apply"
+              data-category="Other"
+              data-status="Complete Works"
+              data-words="61230"
+              data-tags="humor,adventure,comedy,road trip,friends to lovers"
+            >
+              <div class="work-icons grid-icons">
+                <span class="rating-badge badge-green">G</span>
+                <span class="rating-badge badge-blue">&#10003;</span>
+                <span class="rating-badge" style="background:#4f4f4f">O</span>
+                <span class="rating-badge badge-green">✓</span>
+              </div>
+
+              <div class="work-content">
+                <div class="work-heading">
+                  <div>
+                    <h3><a href="work.html">Ineffable Road Trip</a> <span class="author-inline">by BookshopMiracle</span></h3>
+                    <p class="work-fandom">Good Omens</p>
+                  </div>
+                  <div class="updated-meta">
+                    <span>Updated</span>
+                    <strong>11 Mar 2026</strong>
+                  </div>
+                </div>
+
+                <p class="work-summary">
+                  Crowley and Aziraphale accidentally stop multiple mini-apocalypses over one chaotic weekend trip.
+                </p>
+
+                <div class="tag-row">
+                  <span class="label">Tags:</span>
+                  <span class="tag">Humor</span>
+                  <span class="tag">Adventure</span>
+                  <span class="tag">Comedy</span>
+                  <span class="tag">+2 more</span>
+                </div>
+
+                <div class="stats-row">
+                  <span>Language: English</span>
+                  <span>Words: 61,230</span>
+                  <span>Chapters: 7/7</span>
+                  <span>Hits: 66,910</span>
+                  <span>Kudos: 6691</span>
+                </div>
+              </div>
+            </article>
+
+            <article
+              class="work-card"
+              data-rating="Teen And Up Audiences"
+              data-warnings="No Archive Warnings Apply"
+              data-category="Gen"
+              data-status="Works In Progress"
+              data-words="54660"
+              data-tags="survival,adventure,minecraft,teamwork,exploration"
+            >
+              <div class="work-icons grid-icons">
+                <span class="rating-badge badge-yellow">T</span>
+                <span class="rating-badge badge-blue">&#10003;</span>
+                <span class="rating-badge badge-green">G</span>
+                <span class="rating-badge badge-red">✕</span>
+              </div>
+
+              <div class="work-content">
+                <div class="work-heading">
+                  <div>
+                    <h3><a href="work-book2.html">Redstone Chronicles</a> <span class="author-inline">by BlockByBlock</span></h3>
+                    <p class="work-fandom">Minecraft</p>
+                  </div>
+                  <div class="updated-meta">
+                    <span>Updated</span>
+                    <strong>09 Mar 2026</strong>
+                  </div>
+                </div>
+
+                <p class="work-summary">
+                  Builders and explorers map dangerous ruins while balancing survival, alliances, and betrayal.
+                </p>
+
+                <div class="tag-row">
+                  <span class="label">Tags:</span>
+                  <span class="tag">Survival</span>
+                  <span class="tag">Adventure</span>
+                  <span class="tag">Exploration</span>
+                  <span class="tag">+2 more</span>
+                </div>
+
+                <div class="stats-row">
+                  <span>Language: English</span>
+                  <span>Words: 54,660</span>
+                  <span>Chapters: 6/?</span>
+                  <span>Hits: 59,380</span>
+                  <span>Kudos: 5938</span>
+                </div>
+              </div>
+            </article>
           </div>
 
           <p id="noResultsMessage" style="display: none; margin-top: 16px; color: #7a4b45;">
@@ -382,5 +560,6 @@
   <!-- JavaScript Modules -->
   <script src="js/auth.js"></script>
   <script src="js/ui.js"></script>
+  <script src="js/home.js"></script>
 </body>
 </html>

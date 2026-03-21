@@ -94,7 +94,7 @@
           <p><strong>Published:</strong> <span>2026-01-20</span></p>
           <p><strong>Status:</strong> <span>Completed</span></p>
           <p>
-            <strong>Comments:</strong> <span>287</span>
+            <strong>Comments:</strong> <span id="commentCount">2</span>
             <strong>• Bookmarks:</strong> <span id="bookmarkCount">856</span>
           </p>
         </div>
@@ -304,8 +304,12 @@
               <input id="volumeRange" type="range" min="0" max="1" step="0.1" value="0.8" />
             </div>
 
-            <select id="voiceMood" class="tts-voice-select">
-              <option value="default">David - Mysterious</option>
+            <select id="voiceLanguage" class="tts-voice-select" aria-label="TTS language">
+              <option value="en-US">English</option>
+            </select>
+
+            <select id="voiceAccent" class="tts-voice-select" aria-label="TTS accent">
+              <option value="any">Auto accent</option>
             </select>
 
             <div class="tts-wave-icon" aria-hidden="true">

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Logged Out - Archive of Our Own</title>
+
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/header.css" />
+  <link rel="stylesheet" href="css/auth.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body data-page="logged-out">
+  <header class="site-header">
+    <div class="header-top container">
+      <a class="logo-wrap" href="index.html">
+        <div class="logo-mark">AO</div>
+        <div class="logo-copy">
+          <h1>Archive of Our Own</h1>
+          <p>for users, by users</p>
+        </div>
+      </a>
+
+      <div class="auth-links">
+        <a href="login.html">Log In</a>
+        <span>|</span>
+        <a href="register.html">Sign Up</a>
+      </div>
+    </div>
+
+    <div class="nav-bar">
+      <div class="container nav-inner">
+        <nav class="main-nav">
+          <a href="index.html">Home</a>
+          <a href="browse-fandom.html">Fandoms</a>
+          <a href="browse-works.html">Browse</a>
+          <a href="about.html">About</a>
+        </nav>
+
+        <form class="search-form">
+          <input type="text" placeholder="Search works..." />
+          <button type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </header>
+
+  <main class="auth-page-main">
+    <section class="auth-shell">
+      <article class="auth-info-panel">
+        <p class="auth-kicker">Session Ended</p>
+        <h2>You are now logged out</h2>
+        <p>Your account session has been safely closed. You can log in again anytime to continue reading and posting works.</p>
+      </article>
+
+      <article class="auth-card">
+        <h3>What next?</h3>
+        <div class="auth-info-list">
+          <div class="auth-info-item"><a href="login.html">Log In Again</a></div>
+          <div class="auth-info-item"><a href="register.html">Create a New Account</a></div>
+          <div class="auth-info-item"><a href="index.html">Go to Homepage</a></div>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <script src="js/auth.js"></script>
+</body>
+</html>
